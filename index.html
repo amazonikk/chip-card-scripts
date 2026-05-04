@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:sans-serif;background:#f7f7f7;padding:16px}
+.w{max-width:900px;margin:auto}
+.top{display:flex;justify-content:space-between;flex-wrap:wrap;margin-bottom:12px}
+.nav-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:12px}
+.nav-btn{border:1px solid #ddd;border-radius:10px;padding:10px;background:#fff;cursor:pointer}
+.nav-btn.on{background:#E6F1FB;border-color:#378ADD}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.tb{padding:6px 12px;border-radius:20px;border:1px solid #ddd;background:#fff;cursor:pointer}
+.tb.on{background:#E6F1FB;border-color:#378ADD}
+.panel{display:none}
+.panel.on{display:block}
+.sub{display:none}
+.sub.on{display:block}
+.mbox{background:#fff;border:1px solid #ddd;border-radius:10px;padding:14px;white-space:pre-line;margin-top:6px}
+</style>
+
+<script>
+function showPanel(id,btn){
+ document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+ document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('on'));
+ document.getElementById(id).classList.add('on');
+ btn.classList.add('on');
+}
+function showSub(p,s,btn){
+ document.querySelectorAll('#'+p+' .sub').forEach(x=>x.classList.remove('on'));
+ document.querySelectorAll('#'+p+' .tb').forEach(x=>x.classList.remove('on'));
+ document.getElementById(p+'-'+s).classList.add('on');
+ btn.classList.add('on');
+}
+</script>
+
+</head>
+<body>
+
+<div class="w">
+
+<!-- КВАЛАЙФЕР -->
+<div class="mbox" style="margin-bottom:14px">
+Вітаю! Щоб підібрати потрібний варіант і назвати точну ціну — дайте відповідь на 3 питання:
+
+1️⃣ Чи у вас вже є актуальна чіп-карта (будь якої країни)?
+2️⃣ Чи є код 95, якої країни?
+3️⃣ Де зараз знаходитесь?
+</div>
+
+<!-- ВИБІР -->
+<div class="nav-grid">
+<button class="nav-btn on" onclick="showPanel('p1',this)">🟦 Польський код 95</button>
+<button class="nav-btn" onclick="showPanel('p2',this)">🟡 Справка ДАІ</button>
+<button class="nav-btn" onclick="showPanel('p3',this)">🟢 Євро код 95</button>
+<button class="nav-btn" onclick="showPanel('p4',this)">🌍 Без документів</button>
+</div>
+
+<!-- ===== УНІВЕРСАЛЬНИЙ ШАБЛОН ===== -->
+
+<!-- P1 -->
+<div id="p1" class="panel on">
+<div class="tabs">
+<button class="tb on" onclick="showSub('p1','a',this)">Перше повідомлення</button>
+<button class="tb" onclick="showSub('p1','b',this)">Доки ок → доставка</button>
+<button class="tb" onclick="showSub('p1','c',this)">PL</button>
+<button class="tb" onclick="showSub('p1','d',this)">EU</button>
+<button class="tb" onclick="showSub('p1','e',this)">UA</button>
+<button class="tb" onclick="showSub('p1','f',this)">BY</button>
+</div>
+
+<div id="p1-a" class="sub on"><div class="mbox">
+✅ Ваш варіант: Чіп-карта на основі польського коду 95
+
+💰 560 зл / 140 євро + доставка окремо
+⏱ 10–11 робочих днів
+📬 Поштою
+
+Документи:
+паспорт / права / код 95 / PESEL / підпис / фото / стара карта
+</div></div>
+
+<div id="p1-b" class="sub"><div class="mbox">
+Документи перевірили — все в порядку ✅
+
+Напишіть:
+— Де ви зараз?
+— Куди відправити: Польща / Європа / Україна / Білорусь?
+</div></div>
+
+<div id="p1-c" class="sub"><div class="mbox">
+Сума: 590 зл / 140 євро (560 + 30 доставка)
+</div></div>
+
+<div id="p1-d" class="sub"><div class="mbox">
+Сума: 560 зл / 165 євро (140 + 25€ доставка)
+</div></div>
+
+<div id="p1-e" class="sub"><div class="mbox">
+Сума: 645 зл / 140 євро (560 + 85 доставка)
+</div></div>
+
+<div id="p1-f" class="sub"><div class="mbox">
+Сума: 560 зл / 140 євро (доставка безкоштовно)
+</div></div>
+</div>
+
+<!-- P2 -->
+<div id="p2" class="panel">
+<div class="tabs">
+<button class="tb on" onclick="showSub('p2','a',this)">Перше повідомлення</button>
+<button class="tb" onclick="showSub('p2','b',this)">Доки ок → доставка</button>
+<button class="tb" onclick="showSub('p2','c',this)">PL</button>
+<button class="tb" onclick="showSub('p2','d',this)">EU</button>
+<button class="tb" onclick="showSub('p2','e',this)">UA</button>
+<button class="tb" onclick="showSub('p2','f',this)">BY</button>
+</div>
+
+<div id="p2-a" class="sub on"><div class="mbox">
+✅ Чіп-карта на основі справки ДАІ  
+💰 660 зл / 165€ + доставка
+</div></div>
+
+<div id="p2-b" class="sub"><div class="mbox">
+Документи перевірили — все ок  
+Де ви і куди відправка?
+</div></div>
+
+<div id="p2-c" class="sub"><div class="mbox">690 зл / 165€ (660 + 30)</div></div>
+<div id="p2-d" class="sub"><div class="mbox">660 зл / 190€ (165 + 25€)</div></div>
+<div id="p2-e" class="sub"><div class="mbox">745 зл / 165€ (660 + 85)</div></div>
+<div id="p2-f" class="sub"><div class="mbox">660 зл / 165€ (безкоштовно)</div></div>
+</div>
+
+<!-- P3 -->
+<div id="p3" class="panel">
+<div class="tabs">
+<button class="tb on" onclick="showSub('p3','a',this)">Перше</button>
+<button class="tb" onclick="showSub('p3','b',this)">Доставка</button>
+<button class="tb" onclick="showSub('p3','c',this)">PL</button>
+<button class="tb" onclick="showSub('p3','d',this)">EU</button>
+<button class="tb" onclick="showSub('p3','e',this)">UA</button>
+<button class="tb" onclick="showSub('p3','f',this)">BY</button>
+</div>
+
+<div id="p3-a" class="sub on"><div class="mbox">760 зл / 190€ + доставка</div></div>
+<div id="p3-b" class="sub"><div class="mbox">Де ви і куди доставка?</div></div>
+<div id="p3-c" class="sub"><div class="mbox">790 зл / 190€</div></div>
+<div id="p3-d" class="sub"><div class="mbox">760 зл / 215€</div></div>
+<div id="p3-e" class="sub"><div class="mbox">845 зл / 190€</div></div>
+<div id="p3-f" class="sub"><div class="mbox">760 зл / 190€</div></div>
+</div>
+
+<!-- P4 -->
+<div id="p4" class="panel">
+<div class="tabs">
+<button class="tb on" onclick="showSub('p4','a',this)">Перше</button>
+<button class="tb" onclick="showSub('p4','b',this)">Доставка</button>
+<button class="tb" onclick="showSub('p4','c',this)">PL</button>
+<button class="tb" onclick="showSub('p4','d',this)">EU</button>
+<button class="tb" onclick="showSub('p4','e',this)">UA</button>
+<button class="tb" onclick="showSub('p4','f',this)">BY</button>
+</div>
+
+<div id="p4-a" class="sub on"><div class="mbox">1750 зл + доставка</div></div>
+<div id="p4-b" class="sub"><div class="mbox">Де ви і куди доставка?</div></div>
+<div id="p4-c" class="sub"><div class="mbox">1780 зл</div></div>
+<div id="p4-d" class="sub"><div class="mbox">1750 зл + 25€</div></div>
+<div id="p4-e" class="sub"><div class="mbox">1835 зл</div></div>
+<div id="p4-f" class="sub"><div class="mbox">1750 зл</div></div>
+</div>
+
+</div>
+</body>
+</html>
