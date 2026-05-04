@@ -137,7 +137,11 @@ body{margin:0;background:#fff;color:var(--color-text-primary)}
 </div>
 </div>
 <div class="sec-label" id="lbl-choose">Оберіть ситуацію</div>
-<div class="nav-grid">
+<div class="nav-grid"><button class="nav-btn" onclick="showPanel('p6',this)">
+<span class="nb-ico">❓</span>
+<span class="nb-t" data-ar="الرسالة الأولى" data-en="First message" data-ru="Первое сообщение" data-uk="Перше повідомлення">Перше повідомлення</span>
+<span class="nb-s">Людина зацікавилась ціною</span>
+</button>
 <button class="nav-btn on" onclick="showPanel('p1',this)">
 <span class="nb-ico">🟦</span>
 <span class="nb-t" data-ar="كود 95 البولندي" data-en="Polish code 95" data-ru="Польский код 95" data-uk="Польський код 95">Польський код 95</span>
@@ -163,11 +167,7 @@ body{margin:0;background:#fff;color:var(--color-text-primary)}
 <span class="nb-t" data-ar="إلغاء البطاقة الأوكرانية" data-en="Cancel UA card" data-ru="Аннулирование UA карты" data-uk="Аннулювання UA карти">Аннулювання UA карти</span>
 <span class="nb-s">200 зл · 2 тижні</span>
 </button>
-<button class="nav-btn" onclick="showPanel('p6',this)">
-<span class="nb-ico">❓</span>
-<span class="nb-t" data-ar="الرسالة الأولى" data-en="First message" data-ru="Первое сообщение" data-uk="Перше повідомлення">Перше повідомлення</span>
-<span class="nb-s">Людина зацікавилась ціною</span>
-</button>
+
 <button class="nav-btn" onclick="showPanel('p7',this)">
 <span class="nb-ico">📬</span>
 <span class="nb-t" data-ar="التوصيل" data-en="Delivery" data-ru="Доставка" data-uk="Доставка">Доставка</span>
