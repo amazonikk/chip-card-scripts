@@ -1,4 +1,4 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <h2 class="sr-only">Скрипти директ-менеджера — чіп-карта, всі мови</h2>
 <style>
 :root{
@@ -126,167 +126,77 @@ body{margin:0;background:#fff;color:var(--color-text-primary)}
 @media (max-width:680px){.topbar{align-items:flex-start;flex-direction:column}.lang-row{justify-content:flex-start;width:100%}.lang-btn{flex:1 1 calc(50% - 6px);padding:8px 10px}.nav-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.nav-btn{min-height:86px}.tabs{gap:8px}.tb{flex:1 1 calc(50% - 8px);font-size:14px;padding:9px 10px}.mbox{font-size:15px;padding:16px 14px;line-height:1.6}.alert,.alert-r,.alert-g{font-size:14px;padding:11px 12px}.title{font-size:17px}}
 @media (max-width:430px){.w{padding:14px 10px 24px}.nav-grid{grid-template-columns:1fr}.nav-btn{min-height:74px;padding:11px 13px}.nb-ico{display:inline-block;margin:0 8px 0 0;vertical-align:top}.nb-t{display:inline;font-size:15px}.nb-s{margin-left:30px;font-size:13px}.lang-btn{font-size:13px;min-height:40px}.tb{flex:1 1 100%;min-height:40px}.ic{font-size:13px}.mbox{font-size:14.5px;padding:14px 12px}.cl li{font-size:14.5px}.cp{width:100%;justify-content:center}}
 </style>
-
 <div class="w">
 <div class="topbar">
-  <span class="title">📋 Скрипти директ-менеджера</span>
-  <div class="lang-row">
-    <button class="lang-btn on" onclick="setLang('uk',this)">🇺🇦 УКР</button>
-    <button class="lang-btn" onclick="setLang('ru',this)">🇷🇺 РУС</button>
-    <button class="lang-btn" onclick="setLang('en',this)">🇬🇧 ENG</button>
-    <button class="lang-btn" onclick="setLang('ar',this)">🇲🇦 عربي</button>
-  </div>
+<span class="title">📋 Скрипти директ-менеджера</span>
+<div class="lang-row">
+<button class="lang-btn on" onclick="setLang('uk',this)">🇺🇦 УКР</button>
+<button class="lang-btn" onclick="setLang('ru',this)">🇷🇺 РУС</button>
+<button class="lang-btn" onclick="setLang('en',this)">🇬🇧 ENG</button>
+<button class="lang-btn" onclick="setLang('ar',this)">🇲🇦 عربي</button>
 </div>
-
+</div>
 <div class="sec-label" id="lbl-choose">Оберіть ситуацію</div>
 <div class="nav-grid">
-  <button class="nav-btn on" onclick="showPanel('p1',this)">
-    <span class="nb-ico">🟦</span>
-    <span class="nb-t" data-uk="Польський код 95" data-ru="Польский код 95" data-en="Polish code 95" data-ar="كود 95 البولندي">Польський код 95</span>
-    <span class="nb-s">560 зл · 10-11 р/д</span>
-  </button>
-  <button class="nav-btn" onclick="showPanel('p2',this)">
-    <span class="nb-ico">🟡</span>
-    <span class="nb-t" data-uk="Справка ГАІ" data-ru="Справка ГАИ" data-en="Traffic police cert." data-ar="شهادة المرور">Справка ГАІ</span>
-    <span class="nb-s">660 зл · 11-12 р/д</span>
-  </button>
-  <button class="nav-btn" onclick="showPanel('p3',this)">
-    <span class="nb-ico">🟢</span>
-    <span class="nb-t" data-uk="Євро код 95" data-ru="Евро код 95" data-en="European code 95" data-ar="كود 95 الأوروبي">Євро код 95</span>
-    <span class="nb-s">760 зл · 7-10 р/д</span>
-  </button>
-  <button class="nav-btn" onclick="showPanel('p4',this)">
-    <span class="nb-ico">🌍</span>
-    <span class="nb-t" data-uk="Киргизький варіант" data-ru="Киргизский вариант" data-en="Kyrgyz option" data-ar="الخيار القيرغيزي">Киргизький варіант</span>
-    <span class="nb-s">1750 зл · 3-4 тиж</span>
-  </button>
-  <button class="nav-btn" onclick="showPanel('p5',this)">
-    <span class="nb-ico">❌</span>
-    <span class="nb-t" data-uk="Аннулювання UA карти" data-ru="Аннулирование UA карты" data-en="Cancel UA card" data-ar="إلغاء البطاقة الأوكرانية">Аннулювання UA карти</span>
-    <span class="nb-s">200 зл · 2 тижні</span>
-  </button>
-  <button class="nav-btn" onclick="showPanel('p6',this)">
-    <span class="nb-ico">❓</span>
-    <span class="nb-t" data-uk="Не знає що є / перше повідомлення" data-ru="Не знает что есть / первое сообщение" data-en="Doesn't know / first msg" data-ar="لا يعرف / رسالة أولى">Не знає що є</span>
-    <span class="nb-s">Квалайфер</span>
-  </button>
-  <button class="nav-btn" onclick="showPanel('p7',this)">
-    <span class="nb-ico">📬</span>
-    <span class="nb-t" data-uk="Доставка" data-ru="Доставка" data-en="Delivery" data-ar="التوصيل">Доставка</span>
-    <span class="nb-s">PL · EU · UA · BY</span>
-  </button>
-  <button class="nav-btn" onclick="showPanel('p8',this)">
-    <span class="nb-ico">⚠️</span>
-    <span class="nb-t" data-uk="Проблеми з доками" data-ru="Проблемы с доками" data-en="Document issues" data-ar="مشاكل الوثائق">Проблеми з доками</span>
-    <span class="nb-s">Помилки / відмови</span>
-  </button>
-  <button class="nav-btn" onclick="showPanel('p9',this)">
-    <span class="nb-ico">💬</span>
-    <span class="nb-t" data-uk="Заперечення / FAQ" data-ru="Возражения / FAQ" data-en="Objections / FAQ" data-ar="الاعتراضات / أسئلة">Заперечення / FAQ</span>
-    <span class="nb-s">Типові питання</span>
-  </button>
+<button class="nav-btn on" onclick="showPanel('p1',this)">
+<span class="nb-ico">🟦</span>
+<span class="nb-t" data-ar="كود 95 البولندي" data-en="Polish code 95" data-ru="Польский код 95" data-uk="Польський код 95">Польський код 95</span>
+<span class="nb-s">560 зл · 10-11 р/д</span>
+</button>
+<button class="nav-btn" onclick="showPanel('p2',this)">
+<span class="nb-ico">🟡</span>
+<span class="nb-t" data-ar="شهادة المرور" data-en="Traffic police cert." data-ru="Справка ГАИ" data-uk="Справка ГАІ">Справка ГАІ</span>
+<span class="nb-s">660 зл · 11-12 р/д</span>
+</button>
+<button class="nav-btn" onclick="showPanel('p3',this)">
+<span class="nb-ico">🟢</span>
+<span class="nb-t" data-ar="كود 95 الأوروبي" data-en="European code 95" data-ru="Евро код 95" data-uk="Євро код 95">Євро код 95</span>
+<span class="nb-s">760 зл · 7-10 р/д</span>
+</button>
+<button class="nav-btn" onclick="showPanel('p4',this)">
+<span class="nb-ico">🌍</span>
+<span class="nb-t" data-ar="الخيار القيرغيزي" data-en="Kyrgyz option" data-ru="Киргизский вариант" data-uk="Киргизький варіант">Киргизький варіант</span>
+<span class="nb-s">1750 зл · 3-4 тиж</span>
+</button>
+<button class="nav-btn" onclick="showPanel('p5',this)">
+<span class="nb-ico">❌</span>
+<span class="nb-t" data-ar="إلغاء البطاقة الأوكرانية" data-en="Cancel UA card" data-ru="Аннулирование UA карты" data-uk="Аннулювання UA карти">Аннулювання UA карти</span>
+<span class="nb-s">200 зл · 2 тижні</span>
+</button>
+<button class="nav-btn" onclick="showPanel('p6',this)">
+<span class="nb-ico">❓</span>
+<span class="nb-t" data-ar="الرسالة الأولى" data-en="First message" data-ru="Первое сообщение" data-uk="Перше повідомлення">Перше повідомлення</span>
+<span class="nb-s">Людина зацікавилась ціною</span>
+</button>
+<button class="nav-btn" onclick="showPanel('p7',this)">
+<span class="nb-ico">📬</span>
+<span class="nb-t" data-ar="التوصيل" data-en="Delivery" data-ru="Доставка" data-uk="Доставка">Доставка</span>
+<span class="nb-s">PL · EU · UA · BY</span>
+</button>
+<button class="nav-btn" onclick="showPanel('p8',this)">
+<span class="nb-ico">⚠️</span>
+<span class="nb-t" data-ar="مشاكل الوثائق" data-en="Document issues" data-ru="Проблемы с доками" data-uk="Проблеми з доками">Проблеми з доками</span>
+<span class="nb-s">Помилки / відмови</span>
+</button>
+<button class="nav-btn" onclick="showPanel('p9',this)">
+<span class="nb-ico">💬</span>
+<span class="nb-t" data-ar="الاعتراضات / أسئلة" data-en="Objections / FAQ" data-ru="Возражения / FAQ" data-uk="Заперечення / FAQ">Заперечення / FAQ</span>
+<span class="nb-s">Типові питання</span>
+</button>
 </div>
-
 <!-- ===== P1: Польський код 95 ===== -->
-<div id="p1" class="panel on">
-  <div class="info-row"><span class="ic">560 зл / 140 €</span><span class="ic">10-11 р/д онлайн</span><span class="ic">7 р/д з приїздом</span></div>
-  <div class="alert" id="p1-warn">⚠️ Перевірити: номер на правах = номер на коді 95. Якщо є стара карта — уточнити дату закінчення.</div>
-  <div class="tabs">
-    <button class="tb on" onclick="showSub('p1','a',this)" id="p1-tab-a">Перше повідомлення</button>
-    <button class="tb" onclick="showSub('p1','b',this)" id="p1-tab-b">Доки ок → рахунок</button>
-    <button class="tb" onclick="showSub('p1','c',this)" id="p1-tab-c">Карта готова</button>
-    <button class="tb" onclick="showSub('p1','d',this)" id="p1-tab-d">Чеклист доків</button>
-  </div>
-  <div id="p1-a" class="sub on">
-    <div class="blk"><div class="step-h"><span class="sn">1</span><span class="st">Надіслати клієнту</span></div>
-    <div class="mbox" data-uk="✅ Ваш варіант: Чіп-карта на основі польського коду 95
-
-💰 Вартість: 560 зл / 140 євро «під ключ»
-⏱ Термін: 10–11 робочих днів (онлайн)
-📬 Приїжджати не потрібно — відправляємо поштою
-
-Що потрібно надіслати (скани в гарній якості):
-— Закордонний паспорт
-— Водійське посвідчення
-— Польський код 95
-— PESEL (якщо є)
-— Підпис на білому аркуші
-— Селфі на білому фоні
-— Фото старої чіп-карти (якщо є)
-
-
-
-📦 Доставка оплачується окремо:
-— Польща: InPost — 30 зл
-— Європа: Nova Post / DPD — 25 євро
-— Україна: Nova Post — 85 зл
-— Білорусь: через наших учнів — безкоштовно
-
-Щоб одразу розуміти доставку, напишіть, будь ласка:
-— В якій країні ви зараз знаходитесь?
-— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
-— Зручніше поштомат чи доставка на адресу?
-
-Надішліть документи на KOD95PL.COM@GMAIL.COM або сюди в директ."
-data-ru="✅ Ваш вариант: Чип-карта на основе польского кода 95
-
-💰 Стоимость: 560 зл / 140 евро «под ключ»
-⏱ Срок: 10–11 рабочих дней (онлайн)
-📬 Приезжать не нужно — отправляем почтой
-
-Что нужно прислать (сканы в хорошем качестве):
-— Загранпаспорт
-— Водительское удостоверение
-— Польский код 95
-— Номер PESEL (если есть)
-— Обычная подпись на белом листе бумаги
-— Селфи на белом фоне
-— Фото старой чип-карты (если есть)
-
-
-
-📦 Доставка оплачивается отдельно:
-— Польша: InPost — 30 зл
-— Европа: Nova Post / DPD — 25 евро
-— Украина: Nova Post — 85 зл
-— Беларусь: через наших учеников — бесплатно
-
-Чтобы сразу понимать доставку, напишите, пожалуйста:
-— В какой стране вы сейчас находитесь?
-— Куда нужно отправить карту: Польша / Европа / Украина / Беларусь?
-— Удобнее постамат или доставка на адрес?
-
-Отправьте документы на KOD95PL.COM@GMAIL.COM или здесь в директ."
-data-en="✅ Your option: Driver card based on Polish code 95
-
-💰 Price: 560 PLN / 140 EUR all-inclusive
-⏱ Processing time: 10–11 business days (online)
-📬 No need to come in — we ship by post
-
-Please send the following (good quality scans):
-— International passport
-— Driving licence
-— Polish code 95
-— PESEL number (if available)
-— Handwritten signature on a plain white sheet
-— Selfie on white background
-— Photo of old driver card (if any)
-
-
-
-📦 Delivery is paid separately:
-— Poland: InPost — 30 PLN
-— Europe: Nova Post / DPD — 25 EUR
-— Ukraine: Nova Post — 85 PLN
-— Belarus: through our students — free of charge
-
-To arrange delivery, please tell us:
-— Which country are you currently in?
-— Where should we send the card: Poland / Europe / Ukraine / Belarus?
-— Parcel locker or address delivery?
-
-Send to KOD95PL.COM@GMAIL.COM or here in DM."
-data-ar="✅ خيارك: بطاقة السائق بناءً على كود 95 البولندي
+<div class="panel on" id="p1">
+<div class="info-row"><span class="ic">560 зл / 140 €</span><span class="ic">10-11 р/д онлайн</span><span class="ic">7 р/д з приїздом</span></div>
+<div class="alert" id="p1-warn">⚠️ Перевірити: номер на правах = номер на коді 95. Якщо є стара карта — уточнити дату закінчення.</div>
+<div class="tabs">
+<button class="tb on" id="p1-tab-a" onclick="showSub('p1','a',this)">Перше повідомлення</button>
+<button class="tb" id="p1-tab-b" onclick="showSub('p1','b',this)">Доки ок → доставка</button>
+<button class="tb" id="p1-tab-c" onclick="showSub('p1','c',this)">Карта готова</button>
+<button class="tb" id="p1-tab-d" onclick="showSub('p1','d',this)">Чеклист доків</button>
+</div>
+<div class="sub on" id="p1-a">
+<div class="blk"><div class="step-h"><span class="sn">1</span><span class="st">Надіслати клієнту</span></div>
+<div class="mbox" data-ar="✅ خيارك: بطاقة السائق بناءً على كود 95 البولندي
 
 💰 السعر: 560 زلوتي / 140 يورو شامل كل شيء
 ⏱ مدة المعالجة: 10–11 يوم عمل (عبر الإنترنت)
@@ -314,193 +224,46 @@ data-ar="✅ خيارك: بطاقة السائق بناءً على كود 95 ا�
 — إلى أين نرسل البطاقة: بولندا / أوروبا / أوكرانيا / بيلاروسيا؟
 — هل تفضل خزانة بريد أم توصيل إلى العنوان؟
 
-أرسل الوثائق إلى KOD95PL.COM@GMAIL.COM أو هنا مباشرة.">✅ Ваш варіант: Чіп-карта на основі польського коду 95
+أرسل الوثائق إلى KOD95PL.COM@GMAIL.COM أو هنا مباشرة." data-en="✅ Your option: Driver card based on Polish code 95
 
-💰 Вартість: 560 зл / 140 євро «під ключ»
-⏱ Термін: 10–11 робочих днів (онлайн)
-📬 Приїжджати не потрібно — відправляємо поштою
+💰 Price: 560 PLN / 140 EUR all-inclusive
+⏱ Processing time: 10–11 business days (online)
+📬 No need to come in — we ship by post
 
-Що потрібно надіслати (скани в гарній якості):
-— Закордонний паспорт
-— Водійське посвідчення
-— Польський код 95
-— PESEL (якщо є)
-— Підпис на білому аркуші
-— Селфі на білому фоні
-— Фото старої чіп-карти (якщо є)
-
-
-
-📦 Доставка оплачується окремо:
-— Польща: InPost — 30 зл
-— Європа: Nova Post / DPD — 25 євро
-— Україна: Nova Post — 85 зл
-— Білорусь: через наших учнів — безкоштовно
-
-Щоб одразу розуміти доставку, напишіть, будь ласка:
-— В якій країні ви зараз знаходитесь?
-— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
-— Зручніше поштомат чи доставка на адресу?
-
-Надішліть документи на KOD95PL.COM@GMAIL.COM або сюди в директ.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p1-b" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">2</span><span class="st">Рахунок після перевірки доків</span></div>
-    <div class="mbox" data-uk="Документи перевірили — все в порядку ✅
-
-Рахунок: [ПОСИЛАННЯ / РЕКВІЗИТИ]
-Сума: 560 зл / 140 євро
-
-Після оплати — запускаємо в роботу. Термін 10–11 робочих днів.
-Після виготовлення надішлемо фото карти для перевірки даних — потім організуємо доставку."
-data-ru="Документы проверили — всё в порядке ✅
-
-Счёт на оплату: [ССЫЛКА / РЕКВИЗИТЫ]
-Сумма: 560 зл / 140 евро
-
-После оплаты — запускаем в работу. Срок 10–11 рабочих дней.
-После изготовления пришлём фото карты для проверки данных — затем организуем доставку."
-data-en="Documents checked — all good ✅
-
-Invoice: [LINK / DETAILS]
-Amount: 560 PLN / 140 EUR
-
-After payment we start processing. Time: 10–11 business days.
-Once ready, we'll send a photo for data verification — then arrange delivery."
-data-ar="تم التحقق من الوثائق — كل شيء على ما يرام ✅
-
-الفاتورة: [رابط / تفاصيل]
-المبلغ: 560 زلوتي / 140 يورو
-
-بعد الدفع نبدأ العمل. المدة: 10–11 يوم عمل.
-بعد الانتهاء نرسل صورة البطاقة للتحقق — ثم نرتب التوصيل.">Документи перевірили — все в порядку ✅
-
-Рахунок: [ПОСИЛАННЯ / РЕКВІЗИТИ]
-Сума: 560 зл / 140 євро
-
-Після оплати — запускаємо в роботу. Термін 10–11 робочих днів.
-Після виготовлення надішлемо фото карти для перевірки даних — потім організуємо доставку.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p1-c" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">3</span><span class="st">Карта виготовлена</span></div>
-    <div class="mbox" data-uk="Карта готова! Ось фото для перевірки даних: [ФОТО]
-
-Перевірте, будь ласка:
-— Ім'я та прізвище
-— Дата народження
-— Номер посвідчення
-
-Якщо все вірно — підтвердьте, і одразу перейдемо до оформлення доставки 📬"
-data-ru="Карта готова! Вот фото для проверки данных: [ФОТО]
-
-Проверьте, пожалуйста:
-— Имя и фамилия
-— Дата рождения
-— Номер удостоверения
-
-Если всё верно — подтвердите, и сразу перейдём к оформлению доставки 📬"
-data-en="Card is ready! Here's a photo to verify the data: [PHOTO]
-
-Please check:
-— First and last name
-— Date of birth
-— Licence number
-
-If everything is correct — confirm, and we'll move on to delivery 📬"
-data-ar="البطاقة جاهزة! إليك صورة للتحقق من البيانات: [صورة]
-
-يرجى التحقق من:
-— الاسم الكامل
-— تاريخ الميلاد
-— رقم رخصة القيادة
-
-إذا كان كل شيء صحيحاً — أكّد وسننتقل إلى ترتيب التوصيل 📬">Карта готова! Ось фото для перевірки даних: [ФОТО]
-
-Перевірте, будь ласка:
-— Ім'я та прізвище
-— Дата народження
-— Номер посвідчення
-
-Якщо все вірно — підтвердьте, і одразу перейдемо до оформлення доставки 📬</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p1-d" class="sub">
-    <ul class="cl">
-      <li><span class="ci">✓</span>Номер на правах = номер на коді 95</li>
-      <li><span class="ci">✓</span>Закордонний паспорт — чинний, читабельний</li>
-      <li><span class="ci">✓</span>Польський код 95 — читабельний</li>
-      <li><span class="ci">✓</span>Підпис — на білому аркуші, не скан з документа</li>
-      <li><span class="ci">✓</span>Селфі — на білому або світлому фоні</li>
-      <li><span class="wi">!</span>Є стара карта? → уточнити дату закінчення (якщо &gt;60 днів — аннулювання)</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ===== P2: Справка ГАІ ===== -->
-<div id="p2" class="panel">
-  <div class="info-row"><span class="ic">660 зл / 165 €</span><span class="ic">11-12 р/д онлайн</span><span class="ic">Переклад включено</span></div>
-  <div class="alert">⚠️ Номер правах = номер у справці. Справка не старіша 3 міс. Є апостиль. Грузинська/вірменська/узбецька → +150–200 зл за переклад.</div>
-  <div class="tabs">
-    <button class="tb on" onclick="showSub('p2','a',this)">Перше повідомлення</button>
-    <button class="tb" onclick="showSub('p2','b',this)">Рахунок</button>
-    <button class="tb" onclick="showSub('p2','c',this)">Карта готова</button>
-    <button class="tb" onclick="showSub('p2','d',this)">Чеклист</button>
-  </div>
-  <div id="p2-a" class="sub on">
-    <div class="blk"><div class="step-h"><span class="sn">1</span><span class="st">Надіслати клієнту</span></div>
-    <div class="mbox" data-uk="✅ Ваш варіант: Чіп-карта на основі справки з ДАІ
-
-💰 Вартість: 660 зл / 165 євро «під ключ» (переклад включено)
-⏱ Термін: 11–12 робочих днів (онлайн)
-📬 Приїжджати не потрібно — відправляємо поштою
-
-Перед відправкою перевірте:
-— Номер на правах і в справці збігається
-— Справка не старіша 3 місяців
-— На справці є апостиль
-
-Що надіслати:
-— Закордонний паспорт
-— Водійське посвідчення
-— Справка з ДАІ з апостилем
-— PESEL (якщо є)
-— Підпис на білому аркуші
-— Селфі на білому фоні
-— Фото старої чіп-карти (якщо є)
+Please send the following (good quality scans):
+— International passport
+— Driving licence
+— Polish code 95
+— PESEL number (if available)
+— Handwritten signature on a plain white sheet
+— Selfie on white background
+— Photo of old driver card (if any)
 
 
 
-📦 Доставка оплачується окремо:
-— Польща: InPost — 30 зл
-— Європа: Nova Post / DPD — 25 євро
-— Україна: Nova Post — 85 зл
-— Білорусь: через наших учнів — безкоштовно
+📦 Delivery is paid separately:
+— Poland: InPost — 30 PLN
+— Europe: Nova Post / DPD — 25 EUR
+— Ukraine: Nova Post — 85 PLN
+— Belarus: through our students — free of charge
 
-Щоб одразу розуміти доставку, напишіть, будь ласка:
-— В якій країні ви зараз знаходитесь?
-— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
-— Зручніше поштомат чи доставка на адресу?
+To arrange delivery, please tell us:
+— Which country are you currently in?
+— Where should we send the card: Poland / Europe / Ukraine / Belarus?
+— Parcel locker or address delivery?
 
-Надішліть на KOD95PL.COM@GMAIL.COM або сюди."
-data-ru="✅ Ваш вариант: Чип-карта на основе справки из ГАИ
+Send to KOD95PL.COM@GMAIL.COM or here in DM." data-ru="✅ Ваш вариант: Чип-карта на основе польского кода 95
 
-💰 Стоимость: 660 зл / 165 евро «под ключ» (перевод включён)
-⏱ Срок: 11–12 рабочих дней (онлайн)
+💰 Стоимость: 560 зл / 140 евро «под ключ»
+⏱ Срок: 10–11 рабочих дней (онлайн)
 📬 Приезжать не нужно — отправляем почтой
 
-Перед отправкой проверьте:
-— Номер на правах и в справке совпадает
-— Справка не старше 3 месяцев
-— На справке есть апостиль
-
-Что прислать:
+Что нужно прислать (сканы в хорошем качестве):
 — Загранпаспорт
 — Водительское удостоверение
-— Справка из ГАИ с апостилем
-— PESEL (если есть)
-— Подпись на белом листе бумаги
+— Польский код 95
+— Номер PESEL (если есть)
+— Обычная подпись на белом листе бумаги
 — Селфи на белом фоне
 — Фото старой чип-карты (если есть)
 
@@ -517,8 +280,178 @@ data-ru="✅ Ваш вариант: Чип-карта на основе спра
 — Куда нужно отправить карту: Польша / Европа / Украина / Беларусь?
 — Удобнее постамат или доставка на адрес?
 
-Отправьте на KOD95PL.COM@GMAIL.COM или здесь."
-data-en="✅ Your option: Driver card based on traffic police certificate
+Отправьте документы на KOD95PL.COM@GMAIL.COM или здесь в директ." data-uk="✅ Ваш варіант: Чіп-карта на основі польського коду 95
+
+💰 Вартість: 560 зл / 140 євро «під ключ» + ДОСТАВКА ОКРЕМО
+⏱ Термін: 10–11 робочих днів (онлайн)
+📬 Приїжджати не потрібно — відправляємо поштою
+
+Що потрібно надіслати (скани/ФОТО в гарній якості):
+— Закордонний паспорт
+— Водійське посвідчення
+— Польський код 95
+— PESEL (якщо є)
+— Підпис на білому аркуші
+— ФОТО СЕБЕ на білому фоні
+— Фото старої чіп-карти (якщо є)
+
+Надішліть документи на KOD95PL.COM@GMAIL.COM або сюди в директ.">✅ Ваш варіант: Чіп-карта на основі польського коду 95
+
+💰 Вартість: 560 зл / 140 євро «під ключ» + ДОСТАВКА ОКРЕМО
+⏱ Термін: 10–11 робочих днів (онлайн)
+📬 Приїжджати не потрібно — відправляємо поштою
+
+Що потрібно надіслати (скани/ФОТО в гарній якості):
+— Закордонний паспорт
+— Водійське посвідчення
+— Польський код 95
+— PESEL (якщо є)
+— Підпис на білому аркуші
+— ФОТО СЕБЕ на білому фоні
+— Фото старої чіп-карти (якщо є)
+
+Надішліть документи на KOD95PL.COM@GMAIL.COM або сюди в директ.</div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p1-b">
+<div class="blk"><div class="step-h"><span class="sn">2</span><span class="st">Рахунок після перевірки доків</span></div>
+<div class="mbox" data-ar="تم التحقق من الوثائق — كل شيء على ما يرام ✅
+
+الفاتورة: [رابط / تفاصيل]
+المبلغ: 560 زلوتي / 140 يورو
+
+بعد الدفع نبدأ العمل. المدة: 10–11 يوم عمل.
+بعد الانتهاء نرسل صورة البطاقة للتحقق — ثم نرتب التوصيل." data-en="Documents checked — all good ✅
+
+Invoice: [LINK / DETAILS]
+Amount: 560 PLN / 140 EUR
+
+After payment we start processing. Time: 10–11 business days.
+Once ready, we'll send a photo for data verification — then arrange delivery." data-ru="Документы проверили — всё в порядке ✅
+
+Счёт на оплату: [ССЫЛКА / РЕКВИЗИТЫ]
+Сумма: 560 зл / 140 евро
+
+После оплаты — запускаем в работу. Срок 10–11 рабочих дней.
+После изготовления пришлём фото карты для проверки данных — затем организуем доставку." data-uk="Документи перевірили — все в порядку ✅
+
+Щоб одразу розуміти доставку, напишіть, будь ласка:
+— В якій країні ви зараз знаходитесь?
+— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
+
+Після цього надсилаємо рахунок залежно від доставки:
+
+🇵🇱 Польща: 560 зл + 30 зл доставка InPost
+🇪🇺 Європа: 560 зл / 140 євро + 25 євро доставка Nova Post / DPD
+🇺🇦 Україна: 560 зл + 85 зл доставка Nova Post
+🇧🇾 Білорусь: 560 зл, доставка безкоштовно через наших учнів
+
+Рахунок / реквізити: [ПОСИЛАННЯ / РЕКВІЗИТИ]
+
+Після оплати — запускаємо в роботу. Термін 10–11 робочих днів.
+Після виготовлення надішлемо фото карти для перевірки даних.">Документи перевірили — все в порядку ✅
+
+Щоб одразу розуміти доставку, напишіть, будь ласка:
+— В якій країні ви зараз знаходитесь?
+— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
+
+Після цього надсилаємо рахунок залежно від доставки:
+
+🇵🇱 Польща: 560 зл + 30 зл доставка InPost
+🇪🇺 Європа: 560 зл / 140 євро + 25 євро доставка Nova Post / DPD
+🇺🇦 Україна: 560 зл + 85 зл доставка Nova Post
+🇧🇾 Білорусь: 560 зл, доставка безкоштовно через наших учнів
+
+Рахунок / реквізити: [ПОСИЛАННЯ / РЕКВІЗИТИ]
+
+Після оплати — запускаємо в роботу. Термін 10–11 робочих днів.
+Після виготовлення надішлемо фото карти для перевірки даних.</div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p1-c">
+<div class="blk"><div class="step-h"><span class="sn">3</span><span class="st">Карта виготовлена</span></div>
+<div class="mbox" data-ar="البطاقة جاهزة! إليك صورة للتحقق من البيانات: [صورة]
+
+يرجى التحقق من:
+— الاسم الكامل
+— تاريخ الميلاد
+— رقم رخصة القيادة
+
+إذا كان كل شيء صحيحاً — أكّد وسننتقل إلى ترتيب التوصيل 📬" data-en="Card is ready! Here's a photo to verify the data: [PHOTO]
+
+Please check:
+— First and last name
+— Date of birth
+— Licence number
+
+If everything is correct — confirm, and we'll move on to delivery 📬" data-ru="Карта готова! Вот фото для проверки данных: [ФОТО]
+
+Проверьте, пожалуйста:
+— Имя и фамилия
+— Дата рождения
+— Номер удостоверения
+
+Если всё верно — подтвердите, и сразу перейдём к оформлению доставки 📬" data-uk="Карта готова! Ось фото для перевірки даних: [ФОТО]
+
+Перевірте, будь ласка:
+— Ім'я та прізвище
+— Дата народження
+— Номер посвідчення
+
+Якщо все вірно — підтвердьте, і одразу перейдемо до оформлення доставки 📬">Карта готова! Ось фото для перевірки даних: [ФОТО]
+
+Перевірте, будь ласка:
+— Ім'я та прізвище
+— Дата народження
+— Номер посвідчення
+
+Якщо все вірно — підтвердьте, і одразу перейдемо до оформлення доставки 📬</div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p1-d">
+<ul class="cl">
+<li><span class="ci">✓</span>Номер на правах = номер на коді 95</li>
+<li><span class="ci">✓</span>Закордонний паспорт — чинний, читабельний</li>
+<li><span class="ci">✓</span>Польський код 95 — читабельний</li>
+<li><span class="ci">✓</span>Підпис — на білому аркуші, не скан з документа</li>
+<li><span class="ci">✓</span>Селфі — на білому або світлому фоні</li>
+<li><span class="wi">!</span>Є стара карта? → уточнити дату закінчення (якщо &gt;60 днів — аннулювання)</li>
+</ul>
+</div>
+</div>
+<!-- ===== P2: Справка ГАІ ===== -->
+<div class="panel" id="p2">
+<div class="info-row"><span class="ic">660 зл / 165 €</span><span class="ic">11-12 р/д онлайн</span><span class="ic">Переклад включено</span></div>
+<div class="alert">⚠️ Номер правах = номер у справці. Справка не старіша 3 міс. Є апостиль. Грузинська/вірменська/узбецька → +150–200 зл за переклад.</div>
+<div class="tabs">
+<button class="tb on" onclick="showSub('p2','a',this)">Перше повідомлення</button>
+<button class="tb" onclick="showSub('p2','b',this)">Доки ок → доставка</button>
+<button class="tb" onclick="showSub('p2','c',this)">Карта готова</button>
+<button class="tb" onclick="showSub('p2','d',this)">Чеклист</button>
+</div>
+<div class="sub on" id="p2-a">
+<div class="blk"><div class="step-h"><span class="sn">1</span><span class="st">Надіслати клієнту</span></div>
+<div class="mbox" data-ar="✅ خيارك: بطاقة السائق بناءً على شهادة المرور
+
+💰 السعر: 660 زلوتي / 165 يورو شامل كل شيء (الترجمة مشمولة)
+⏱ مدة المعالجة: 11–12 يوم عمل (عبر الإنترنت)
+📬 لا حاجة للحضور — نرسلها بالبريد
+
+قبل الإرسال تحقق من:
+— تطابق رقم رخصة القيادة مع الشهادة
+— ألا تكون الشهادة أقدم من 3 أشهر
+— وجود تصديق الأبوستيل على الشهادة
+
+ما يجب إرساله:
+— جواز السفر
+— رخصة القيادة
+— شهادة المرور مع الأبوستيل
+— رقم PESEL (إن وجد)
+— توقيع يدوي على ورقة بيضاء
+— صورة سيلفي على خلفية بيضاء
+— صورة البطاقة القديمة (إن وجدت)
+
+أرسل إلى KOD95PL.COM@GMAIL.COM أو هنا مباشرة." data-en="✅ Your option: Driver card based on traffic police certificate
 
 💰 Price: 660 PLN / 165 EUR all-inclusive (translation included)
 ⏱ Processing: 11–12 business days (online)
@@ -551,209 +484,23 @@ To arrange delivery, please tell us:
 — Where should we send the card: Poland / Europe / Ukraine / Belarus?
 — Parcel locker or address delivery?
 
-Send to KOD95PL.COM@GMAIL.COM or here in DM."
-data-ar="✅ خيارك: بطاقة السائق بناءً على شهادة المرور
+Send to KOD95PL.COM@GMAIL.COM or here in DM." data-ru="✅ Ваш вариант: Чип-карта на основе справки из ГАИ
 
-💰 السعر: 660 زلوتي / 165 يورو شامل كل شيء (الترجمة مشمولة)
-⏱ مدة المعالجة: 11–12 يوم عمل (عبر الإنترنت)
-📬 لا حاجة للحضور — نرسلها بالبريد
-
-قبل الإرسال تحقق من:
-— تطابق رقم رخصة القيادة مع الشهادة
-— ألا تكون الشهادة أقدم من 3 أشهر
-— وجود تصديق الأبوستيل على الشهادة
-
-ما يجب إرساله:
-— جواز السفر
-— رخصة القيادة
-— شهادة المرور مع الأبوستيل
-— رقم PESEL (إن وجد)
-— توقيع يدوي على ورقة بيضاء
-— صورة سيلفي على خلفية بيضاء
-— صورة البطاقة القديمة (إن وجدت)
-
-أرسل إلى KOD95PL.COM@GMAIL.COM أو هنا مباشرة.">✅ Ваш варіант: Чіп-карта на основі справки з ДАІ
-
-💰 Вартість: 660 зл / 165 євро «під ключ» (переклад включено)
-⏱ Термін: 11–12 робочих днів (онлайн)
-📬 Приїжджати не потрібно — відправляємо поштою
-
-Перед відправкою перевірте:
-— Номер на правах і в справці збігається
-— Справка не старіша 3 місяців
-— На справці є апостиль
-
-Що надіслати:
-— Закордонний паспорт
-— Водійське посвідчення
-— Справка з ДАІ з апостилем
-— PESEL (якщо є)
-— Підпис на білому аркуші
-— Селфі на білому фоні
-— Фото старої чіп-карти (якщо є)
-
-
-
-📦 Доставка оплачується окремо:
-— Польща: InPost — 30 зл
-— Європа: Nova Post / DPD — 25 євро
-— Україна: Nova Post — 85 зл
-— Білорусь: через наших учнів — безкоштовно
-
-Щоб одразу розуміти доставку, напишіть, будь ласка:
-— В якій країні ви зараз знаходитесь?
-— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
-— Зручніше поштомат чи доставка на адресу?
-
-Надішліть на KOD95PL.COM@GMAIL.COM або сюди.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p2-b" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">2</span><span class="st">Рахунок</span></div>
-    <div class="mbox" data-uk="Документи перевірили — все в порядку ✅
-
-Рахунок: [ПОСИЛАННЯ / РЕКВІЗИТИ]
-Сума: 660 зл / 165 євро
-
-Після оплати — запускаємо в роботу. Термін 11–12 робочих днів.
-Після виготовлення — фото для перевірки, потім доставка."
-data-ru="Документы проверили — всё в порядке ✅
-
-Счёт: [ССЫЛКА / РЕКВИЗИТЫ]
-Сумма: 660 зл / 165 евро
-
-После оплаты — запускаем. Срок 11–12 рабочих дней.
-После изготовления — фото для проверки, затем доставка."
-data-en="Documents checked — all good ✅
-
-Invoice: [LINK / DETAILS]
-Amount: 660 PLN / 165 EUR
-
-After payment we start. Time: 11–12 business days.
-Once ready — photo for verification, then delivery."
-data-ar="تم التحقق من الوثائق ✅
-
-الفاتورة: [رابط / تفاصيل]
-المبلغ: 660 زلوتي / 165 يورو
-
-بعد الدفع نبدأ العمل. المدة: 11–12 يوم عمل.
-بعد الانتهاء — صورة للتحقق، ثم التوصيل.">Документи перевірили — все в порядку ✅
-
-Рахунок: [ПОСИЛАННЯ / РЕКВІЗИТИ]
-Сума: 660 зл / 165 євро
-
-Після оплати — запускаємо в роботу. Термін 11–12 робочих днів.
-Після виготовлення — фото для перевірки, потім доставка.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p2-c" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">3</span><span class="st">Карта готова</span></div>
-    <div class="mbox" data-uk="Карта готова! Фото для перевірки: [ФОТО]
-
-Перевірте:
-— Ім'я та прізвище
-— Дата народження
-— Номер посвідчення
-
-Якщо все вірно — підтвердьте, переходимо до доставки 📬"
-data-ru="Карта готова! Фото для проверки: [ФОТО]
-
-Проверьте:
-— Имя и фамилия
-— Дата рождения
-— Номер удостоверения
-
-Если всё верно — подтвердите, переходим к доставке 📬"
-data-en="Card is ready! Photo for verification: [PHOTO]
-
-Please check:
-— Full name
-— Date of birth
-— Licence number
-
-If correct — confirm and we'll arrange delivery 📬"
-data-ar="البطاقة جاهزة! صورة للتحقق: [صورة]
-
-يرجى التحقق من:
-— الاسم الكامل
-— تاريخ الميلاد
-— رقم الرخصة
-
-إذا كان صحيحاً — أكّد وننتقل إلى التوصيل 📬">Карта готова! Фото для перевірки: [ФОТО]
-
-Перевірте:
-— Ім'я та прізвище
-— Дата народження
-— Номер посвідчення
-
-Якщо все вірно — підтвердьте, переходимо до доставки 📬</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p2-d" class="sub">
-    <ul class="cl">
-      <li><span class="ci">✓</span>Номер на правах = номер у справці</li>
-      <li><span class="ci">✓</span>Справка не старіша 3 місяців</li>
-      <li><span class="ci">✓</span>Є апостиль на справці</li>
-      <li><span class="wi">!</span>Мова справки — якщо не UA/RU/PL → +150–200 зл за переклад</li>
-      <li><span class="ci">✓</span>Підпис на білому аркуші</li>
-      <li><span class="wi">!</span>Є стара карта? → уточнити дату закінчення</li>
-    </ul>
-  </div>
-</div>
-
-<!-- ===== P3: Євро код 95 ===== -->
-<div id="p3" class="panel">
-  <div class="info-row"><span class="ic">760 зл / 190 €</span><span class="ic">7-10 р/д онлайн</span><span class="ic">Найшвидший варіант</span></div>
-  <div class="alert">⚠️ Пластиковий (не паперовий) код 95. Номер на правах = номер на коді.</div>
-  <div class="tabs">
-    <button class="tb on" onclick="showSub('p3','a',this)">Перше повідомлення</button>
-    <button class="tb" onclick="showSub('p3','b',this)">Рахунок</button>
-    <button class="tb" onclick="showSub('p3','c',this)">Карта готова</button>
-    <button class="tb" onclick="showSub('p3','d',this)">Чеклист</button>
-  </div>
-  <div id="p3-a" class="sub on">
-    <div class="blk"><div class="step-h"><span class="sn">1</span><span class="st">Надіслати клієнту</span></div>
-    <div class="mbox" data-uk="✅ Ваш варіант: Чіп-карта на основі європейського коду 95
-
-💰 Вартість: 760 зл / 190 євро «під ключ»
-⏱ Термін: 7–10 робочих днів — найшвидший варіант!
-📬 Приїжджати не потрібно — відправляємо поштою
-
-Що надіслати:
-— Закордонний паспорт
-— Водійське посвідчення
-— Пластиковий (європейський) код 95
-— PESEL (якщо є)
-— Підпис на білому аркуші
-— Селфі на білому фоні
-— Фото старої чіп-карти (якщо є)
-
-
-
-📦 Доставка оплачується окремо:
-— Польща: InPost — 30 зл
-— Європа: Nova Post / DPD — 25 євро
-— Україна: Nova Post — 85 зл
-— Білорусь: через наших учнів — безкоштовно
-
-Щоб одразу розуміти доставку, напишіть, будь ласка:
-— В якій країні ви зараз знаходитесь?
-— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
-— Зручніше поштомат чи доставка на адресу?
-
-Надішліть на KOD95PL.COM@GMAIL.COM або сюди."
-data-ru="✅ Ваш вариант: Чип-карта на основе европейского кода 95
-
-💰 Стоимость: 760 зл / 190 евро «под ключ»
-⏱ Срок: 7–10 рабочих дней — самый быстрый вариант!
+💰 Стоимость: 660 зл / 165 евро «под ключ» (перевод включён)
+⏱ Срок: 11–12 рабочих дней (онлайн)
 📬 Приезжать не нужно — отправляем почтой
+
+Перед отправкой проверьте:
+— Номер на правах и в справке совпадает
+— Справка не старше 3 месяцев
+— На справке есть апостиль
 
 Что прислать:
 — Загранпаспорт
 — Водительское удостоверение
-— Пластиковый (европейский) код 95
+— Справка из ГАИ с апостилем
 — PESEL (если есть)
-— Подпись на белом листе
+— Подпись на белом листе бумаги
 — Селфи на белом фоне
 — Фото старой чип-карты (если есть)
 
@@ -770,8 +517,209 @@ data-ru="✅ Ваш вариант: Чип-карта на основе евро
 — Куда нужно отправить карту: Польша / Европа / Украина / Беларусь?
 — Удобнее постамат или доставка на адрес?
 
-Отправьте на KOD95PL.COM@GMAIL.COM или здесь."
-data-en="✅ Your option: Driver card based on European code 95
+Отправьте на KOD95PL.COM@GMAIL.COM или здесь." data-uk="✅ Ваш варіант: Чіп-карта на основі справки з ДАІ
+
+💰 Вартість: 660 зл / 165 євро «під ключ» (переклад включено) + ДОСТАВКА ОКРЕМО
+⏱ Термін: 11–12 робочих днів (онлайн)
+📬 Приїжджати не потрібно — відправляємо поштою
+
+Перед відправкою перевірте:
+— Номер на правах і в справці збігається
+— Справка не старіша 3 місяців
+— На справці є апостиль
+
+Що надіслати:
+— Закордонний паспорт
+— Водійське посвідчення
+— Справка з ДАІ з апостилем
+— PESEL (якщо є)
+— Підпис на білому аркуші
+— ФОТО СЕБЕ на білому фоні
+— Фото старої чіп-карти (якщо є)
+
+
+
+📦 Доставка оплачується окремо:
+— Польща: InPost — 30 зл
+— Європа: Nova Post / DPD — 25 євро
+— Україна: Nova Post — 85 зл
+— Білорусь: через наших учнів — безкоштовно
+
+Щоб одразу розуміти доставку, напишіть, будь ласка:
+— В якій країні ви зараз знаходитесь?
+— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
+— Зручніше поштомат чи доставка на адресу?
+
+Надішліть на KOD95PL.COM@GMAIL.COM або сюди.">✅ Ваш варіант: Чіп-карта на основі справки з ДАІ
+
+💰 Вартість: 660 зл / 165 євро «під ключ» (переклад включено) + ДОСТАВКА ОКРЕМО
+⏱ Термін: 11–12 робочих днів (онлайн)
+📬 Приїжджати не потрібно — відправляємо поштою
+
+Перед відправкою перевірте:
+— Номер на правах і в справці збігається
+— Справка не старіша 3 місяців
+— На справці є апостиль
+
+Що надіслати:
+— Закордонний паспорт
+— Водійське посвідчення
+— Справка з ДАІ з апостилем
+— PESEL (якщо є)
+— Підпис на білому аркуші
+— ФОТО СЕБЕ на білому фоні
+— Фото старої чіп-карти (якщо є)
+
+
+
+📦 Доставка оплачується окремо:
+— Польща: InPost — 30 зл
+— Європа: Nova Post / DPD — 25 євро
+— Україна: Nova Post — 85 зл
+— Білорусь: через наших учнів — безкоштовно
+
+Щоб одразу розуміти доставку, напишіть, будь ласка:
+— В якій країні ви зараз знаходитесь?
+— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
+— Зручніше поштомат чи доставка на адресу?
+
+Надішліть на KOD95PL.COM@GMAIL.COM або сюди.</div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p2-b">
+<div class="blk"><div class="step-h"><span class="sn">2</span><span class="st">Рахунок</span></div>
+<div class="mbox" data-ar="تم التحقق من الوثائق ✅
+
+الفاتورة: [رابط / تفاصيل]
+المبلغ: 660 زلوتي / 165 يورو
+
+بعد الدفع نبدأ العمل. المدة: 11–12 يوم عمل.
+بعد الانتهاء — صورة للتحقق، ثم التوصيل." data-en="Documents checked — all good ✅
+
+Invoice: [LINK / DETAILS]
+Amount: 660 PLN / 165 EUR
+
+After payment we start. Time: 11–12 business days.
+Once ready — photo for verification, then delivery." data-ru="Документы проверили — всё в порядке ✅
+
+Счёт: [ССЫЛКА / РЕКВИЗИТЫ]
+Сумма: 660 зл / 165 евро
+
+После оплаты — запускаем. Срок 11–12 рабочих дней.
+После изготовления — фото для проверки, затем доставка." data-uk="Документи перевірили — все в порядку ✅
+
+Щоб одразу розуміти доставку, напишіть, будь ласка:
+— В якій країні ви зараз знаходитесь?
+— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
+
+Після цього надсилаємо рахунок залежно від доставки:
+
+🇵🇱 Польща: 660 зл / 165 євро + 30 зл доставка InPost
+🇪🇺 Європа: 660 зл / 165 євро + 25 євро доставка Nova Post / DPD
+🇺🇦 Україна: 660 зл / 165 євро + 85 зл доставка Nova Post
+🇧🇾 Білорусь: 660 зл / 165 євро, доставка безкоштовно через наших учнів
+
+Рахунок / реквізити: [ПОСИЛАННЯ / РЕКВІЗИТИ]
+
+Після оплати — запускаємо в роботу. Термін 11–12 робочих днів.
+Після виготовлення — фото для перевірки, потім доставка.">Документи перевірили — все в порядку ✅
+
+Щоб одразу розуміти доставку, напишіть, будь ласка:
+— В якій країні ви зараз знаходитесь?
+— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
+
+Після цього надсилаємо рахунок залежно від доставки:
+
+🇵🇱 Польща: 660 зл / 165 євро + 30 зл доставка InPost
+🇪🇺 Європа: 660 зл / 165 євро + 25 євро доставка Nova Post / DPD
+🇺🇦 Україна: 660 зл / 165 євро + 85 зл доставка Nova Post
+🇧🇾 Білорусь: 660 зл / 165 євро, доставка безкоштовно через наших учнів
+
+Рахунок / реквізити: [ПОСИЛАННЯ / РЕКВІЗИТИ]
+
+Після оплати — запускаємо в роботу. Термін 11–12 робочих днів.
+Після виготовлення — фото для перевірки, потім доставка.</div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p2-c">
+<div class="blk"><div class="step-h"><span class="sn">3</span><span class="st">Карта готова</span></div>
+<div class="mbox" data-ar="البطاقة جاهزة! صورة للتحقق: [صورة]
+
+يرجى التحقق من:
+— الاسم الكامل
+— تاريخ الميلاد
+— رقم الرخصة
+
+إذا كان صحيحاً — أكّد وننتقل إلى التوصيل 📬" data-en="Card is ready! Photo for verification: [PHOTO]
+
+Please check:
+— Full name
+— Date of birth
+— Licence number
+
+If correct — confirm and we'll arrange delivery 📬" data-ru="Карта готова! Фото для проверки: [ФОТО]
+
+Проверьте:
+— Имя и фамилия
+— Дата рождения
+— Номер удостоверения
+
+Если всё верно — подтвердите, переходим к доставке 📬" data-uk="Карта готова! Фото для перевірки: [ФОТО]
+
+Перевірте:
+— Ім'я та прізвище
+— Дата народження
+— Номер посвідчення
+
+Якщо все вірно — підтвердьте, переходимо до доставки 📬">Карта готова! Фото для перевірки: [ФОТО]
+
+Перевірте:
+— Ім'я та прізвище
+— Дата народження
+— Номер посвідчення
+
+Якщо все вірно — підтвердьте, переходимо до доставки 📬</div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p2-d">
+<ul class="cl">
+<li><span class="ci">✓</span>Номер на правах = номер у справці</li>
+<li><span class="ci">✓</span>Справка не старіша 3 місяців</li>
+<li><span class="ci">✓</span>Є апостиль на справці</li>
+<li><span class="wi">!</span>Мова справки — якщо не UA/RU/PL → +150–200 зл за переклад</li>
+<li><span class="ci">✓</span>Підпис на білому аркуші</li>
+<li><span class="wi">!</span>Є стара карта? → уточнити дату закінчення</li>
+</ul>
+</div>
+</div>
+<!-- ===== P3: Євро код 95 ===== -->
+<div class="panel" id="p3">
+<div class="info-row"><span class="ic">760 зл / 190 €</span><span class="ic">7-10 р/д онлайн</span><span class="ic">Найшвидший варіант</span></div>
+<div class="alert">⚠️ Пластиковий (не паперовий) код 95. Номер на правах = номер на коді.</div>
+<div class="tabs">
+<button class="tb on" onclick="showSub('p3','a',this)">Перше повідомлення</button>
+<button class="tb" onclick="showSub('p3','b',this)">Доки ок → доставка</button>
+<button class="tb" onclick="showSub('p3','c',this)">Карта готова</button>
+<button class="tb" onclick="showSub('p3','d',this)">Чеклист</button>
+</div>
+<div class="sub on" id="p3-a">
+<div class="blk"><div class="step-h"><span class="sn">1</span><span class="st">Надіслати клієнту</span></div>
+<div class="mbox" data-ar="✅ خيارك: بطاقة السائق بناءً على كود 95 الأوروبي
+
+💰 السعر: 760 زلوتي / 190 يورو شامل كل شيء
+⏱ المدة: 7–10 أيام عمل — الخيار الأسرع!
+📬 لا حاجة للحضور — نرسلها بالبريد
+
+ما يجب إرساله:
+— جواز السفر
+— رخصة القيادة
+— كود 95 البلاستيكي الأوروبي
+— رقم PESEL (إن وجد)
+— توقيع يدوي على ورقة بيضاء
+— صورة سيلفي على خلفية بيضاء
+— صورة البطاقة القديمة (إن وجدت)
+
+أرسل إلى KOD95PL.COM@GMAIL.COM أو هنا مباشرة." data-en="✅ Your option: Driver card based on European code 95
 
 💰 Price: 760 PLN / 190 EUR all-inclusive
 ⏱ Processing: 7–10 business days — fastest option!
@@ -799,25 +747,37 @@ To arrange delivery, please tell us:
 — Where should we send the card: Poland / Europe / Ukraine / Belarus?
 — Parcel locker or address delivery?
 
-Send to KOD95PL.COM@GMAIL.COM or here in DM."
-data-ar="✅ خيارك: بطاقة السائق بناءً على كود 95 الأوروبي
+Send to KOD95PL.COM@GMAIL.COM or here in DM." data-ru="✅ Ваш вариант: Чип-карта на основе европейского кода 95
 
-💰 السعر: 760 زلوتي / 190 يورو شامل كل شيء
-⏱ المدة: 7–10 أيام عمل — الخيار الأسرع!
-📬 لا حاجة للحضور — نرسلها بالبريد
+💰 Стоимость: 760 зл / 190 евро «под ключ»
+⏱ Срок: 7–10 рабочих дней — самый быстрый вариант!
+📬 Приезжать не нужно — отправляем почтой
 
-ما يجب إرساله:
-— جواز السفر
-— رخصة القيادة
-— كود 95 البلاستيكي الأوروبي
-— رقم PESEL (إن وجد)
-— توقيع يدوي على ورقة بيضاء
-— صورة سيلفي على خلفية بيضاء
-— صورة البطاقة القديمة (إن وجدت)
+Что прислать:
+— Загранпаспорт
+— Водительское удостоверение
+— Пластиковый (европейский) код 95
+— PESEL (если есть)
+— Подпись на белом листе
+— Селфи на белом фоне
+— Фото старой чип-карты (если есть)
 
-أرسل إلى KOD95PL.COM@GMAIL.COM أو هنا مباشرة.">✅ Ваш варіант: Чіп-карта на основі європейського коду 95
 
-💰 Вартість: 760 зл / 190 євро «під ключ»
+
+📦 Доставка оплачивается отдельно:
+— Польша: InPost — 30 зл
+— Европа: Nova Post / DPD — 25 евро
+— Украина: Nova Post — 85 зл
+— Беларусь: через наших учеников — бесплатно
+
+Чтобы сразу понимать доставку, напишите, пожалуйста:
+— В какой стране вы сейчас находитесь?
+— Куда нужно отправить карту: Польша / Европа / Украина / Беларусь?
+— Удобнее постамат или доставка на адрес?
+
+Отправьте на KOD95PL.COM@GMAIL.COM или здесь." data-uk="✅ Ваш варіант: Чіп-карта на основі європейського коду 95
+
+💰 Вартість: 760 зл / 190 євро «під ключ» + ДОСТАВКА ОКРЕМО
 ⏱ Термін: 7–10 робочих днів — найшвидший варіант!
 📬 Приїжджати не потрібно — відправляємо поштою
 
@@ -827,7 +787,35 @@ data-ar="✅ خيارك: بطاقة السائق بناءً على كود 95 ا�
 — Пластиковий (європейський) код 95
 — PESEL (якщо є)
 — Підпис на білому аркуші
-— Селфі на білому фоні
+— ФОТО СЕБЕ на білому фоні
+— Фото старої чіп-карти (якщо є)
+
+
+
+📦 Доставка оплачується окремо:
+— Польща: InPost — 30 зл
+— Європа: Nova Post / DPD — 25 євро
+— Україна: Nova Post — 85 зл
+— Білорусь: через наших учнів — безкоштовно
+
+Щоб одразу розуміти доставку, напишіть, будь ласка:
+— В якій країні ви зараз знаходитесь?
+— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
+— Зручніше поштомат чи доставка на адресу?
+
+Надішліть на KOD95PL.COM@GMAIL.COM або сюди.">✅ Ваш варіант: Чіп-карта на основі європейського коду 95
+
+💰 Вартість: 760 зл / 190 євро «під ключ» + ДОСТАВКА ОКРЕМО
+⏱ Термін: 7–10 робочих днів — найшвидший варіант!
+📬 Приїжджати не потрібно — відправляємо поштою
+
+Що надіслати:
+— Закордонний паспорт
+— Водійське посвідчення
+— Пластиковий (європейський) код 95
+— PESEL (якщо є)
+— Підпис на білому аркуші
+— ФОТО СЕБЕ на білому фоні
 — Фото старої чіп-карти (якщо є)
 
 
@@ -844,80 +832,94 @@ data-ar="✅ خيارك: بطاقة السائق بناءً على كود 95 ا�
 — Зручніше поштомат чи доставка на адресу?
 
 Надішліть на KOD95PL.COM@GMAIL.COM або сюди.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p3-b" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">2</span><span class="st">Рахунок</span></div>
-    <div class="mbox" data-uk="Документи перевірили ✅
-
-Рахунок: [ПОСИЛАННЯ / РЕКВІЗИТИ]
-Сума: 760 зл / 190 євро
-
-Після оплати — запускаємо. Термін 7–10 робочих днів.
-Після виготовлення — фото для перевірки, потім доставка."
-data-ru="Документы проверили ✅
-
-Счёт: [ССЫЛКА / РЕКВИЗИТЫ]
-Сумма: 760 зл / 190 евро
-
-После оплаты — запускаем. Срок 7–10 рабочих дней.
-После изготовления — фото для проверки, затем доставка."
-data-en="Documents checked ✅
-
-Invoice: [LINK / DETAILS]
-Amount: 760 PLN / 190 EUR
-
-After payment we start. Time: 7–10 business days.
-Once ready — photo for verification, then delivery."
-data-ar="تم التحقق من الوثائق ✅
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p3-b">
+<div class="blk"><div class="step-h"><span class="sn">2</span><span class="st">Рахунок</span></div>
+<div class="mbox" data-ar="تم التحقق من الوثائق ✅
 
 الفاتورة: [رابط / تفاصيل]
 المبلغ: 760 زلوتي / 190 يورو
 
 بعد الدفع نبدأ. المدة: 7–10 أيام عمل.
-بعد الانتهاء — صورة للتحقق، ثم التوصيل.">Документи перевірили ✅
+بعد الانتهاء — صورة للتحقق، ثم التوصيل." data-en="Documents checked ✅
 
-Рахунок: [ПОСИЛАННЯ / РЕКВІЗИТИ]
-Сума: 760 зл / 190 євро
+Invoice: [LINK / DETAILS]
+Amount: 760 PLN / 190 EUR
 
-Після оплати — запускаємо. Термін 7–10 робочих днів.
+After payment we start. Time: 7–10 business days.
+Once ready — photo for verification, then delivery." data-ru="Документы проверили ✅
+
+Счёт: [ССЫЛКА / РЕКВИЗИТЫ]
+Сумма: 760 зл / 190 евро
+
+После оплаты — запускаем. Срок 7–10 рабочих дней.
+После изготовления — фото для проверки, затем доставка." data-uk="Документи перевірили — все в порядку ✅
+
+Щоб одразу розуміти доставку, напишіть, будь ласка:
+— В якій країні ви зараз знаходитесь?
+— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
+
+Після цього надсилаємо рахунок залежно від доставки:
+
+🇵🇱 Польща: 760 зл / 190 євро + 30 зл доставка InPost
+🇪🇺 Європа: 760 зл / 190 євро + 25 євро доставка Nova Post / DPD
+🇺🇦 Україна: 760 зл / 190 євро + 85 зл доставка Nova Post
+🇧🇾 Білорусь: 760 зл / 190 євро, доставка безкоштовно через наших учнів
+
+Рахунок / реквізити: [ПОСИЛАННЯ / РЕКВІЗИТИ]
+
+Після оплати — запускаємо в роботу. Термін 7–10 робочих днів.
+Після виготовлення — фото для перевірки, потім доставка.">Документи перевірили — все в порядку ✅
+
+Щоб одразу розуміти доставку, напишіть, будь ласка:
+— В якій країні ви зараз знаходитесь?
+— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
+
+Після цього надсилаємо рахунок залежно від доставки:
+
+🇵🇱 Польща: 760 зл / 190 євро + 30 зл доставка InPost
+🇪🇺 Європа: 760 зл / 190 євро + 25 євро доставка Nova Post / DPD
+🇺🇦 Україна: 760 зл / 190 євро + 85 зл доставка Nova Post
+🇧🇾 Білорусь: 760 зл / 190 євро, доставка безкоштовно через наших учнів
+
+Рахунок / реквізити: [ПОСИЛАННЯ / РЕКВІЗИТИ]
+
+Після оплати — запускаємо в роботу. Термін 7–10 робочих днів.
 Після виготовлення — фото для перевірки, потім доставка.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p3-c" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">3</span><span class="st">Карта готова</span></div>
-    <div class="mbox" data-uk="Карта готова! Фото для перевірки: [ФОТО]
-
-Перевірте:
-— Ім'я та прізвище
-— Дата народження
-— Номер посвідчення
-
-Підтвердьте — і переходимо до доставки 📬"
-data-ru="Карта готова! Фото для проверки: [ФОТО]
-
-Проверьте:
-— Имя и фамилия
-— Дата рождения
-— Номер удостоверения
-
-Подтвердите — и переходим к доставке 📬"
-data-en="Card is ready! Photo for verification: [PHOTO]
-
-Please check:
-— Full name
-— Date of birth
-— Licence number
-
-Confirm — and we'll arrange delivery 📬"
-data-ar="البطاقة جاهزة! صورة للتحقق: [صورة]
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p3-c">
+<div class="blk"><div class="step-h"><span class="sn">3</span><span class="st">Карта готова</span></div>
+<div class="mbox" data-ar="البطاقة جاهزة! صورة للتحقق: [صورة]
 
 تحقق من:
 — الاسم الكامل
 — تاريخ الميلاد
 — رقم الرخصة
 
-أكّد — وننتقل إلى التوصيل 📬">Карта готова! Фото для перевірки: [ФОТО]
+أكّد — وننتقل إلى التوصيل 📬" data-en="Card is ready! Photo for verification: [PHOTO]
+
+Please check:
+— Full name
+— Date of birth
+— Licence number
+
+Confirm — and we'll arrange delivery 📬" data-ru="Карта готова! Фото для проверки: [ФОТО]
+
+Проверьте:
+— Имя и фамилия
+— Дата рождения
+— Номер удостоверения
+
+Подтвердите — и переходим к доставке 📬" data-uk="Карта готова! Фото для перевірки: [ФОТО]
+
+Перевірте:
+— Ім'я та прізвище
+— Дата народження
+— Номер посвідчення
+
+Підтвердьте — і переходимо до доставки 📬">Карта готова! Фото для перевірки: [ФОТО]
 
 Перевірте:
 — Ім'я та прізвище
@@ -925,78 +927,39 @@ data-ar="البطاقة جاهزة! صورة للتحقق: [صورة]
 — Номер посвідчення
 
 Підтвердьте — і переходимо до доставки 📬</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p3-d" class="sub">
-    <ul class="cl">
-      <li><span class="ci">✓</span>Номер на правах = номер на коді 95</li>
-      <li><span class="ci">✓</span>Саме пластиковий, не паперовий польський</li>
-      <li><span class="ci">✓</span>Паспорт чинний</li>
-      <li><span class="ci">✓</span>Підпис на білому аркуші</li>
-      <li><span class="wi">!</span>Є стара карта? → уточнити дату закінчення</li>
-    </ul>
-  </div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
 </div>
-
+<div class="sub" id="p3-d">
+<ul class="cl">
+<li><span class="ci">✓</span>Номер на правах = номер на коді 95</li>
+<li><span class="ci">✓</span>Саме пластиковий, не паперовий польський</li>
+<li><span class="ci">✓</span>Паспорт чинний</li>
+<li><span class="ci">✓</span>Підпис на білому аркуші</li>
+<li><span class="wi">!</span>Є стара карта? → уточнити дату закінчення</li>
+</ul>
+</div>
+</div>
 <!-- ===== P4: Киргизький ===== -->
-<div id="p4" class="panel">
-  <div class="info-row"><span class="ic">1750 зл</span><span class="ic">3-4 тижні</span><span class="ic">Тільки паспорт + права</span></div>
-  <div class="alert">Варіант для тих, у кого немає ні коду 95, ні справки ДАІ. Мінімум документів.</div>
-  <div class="tabs">
-    <button class="tb on" onclick="showSub('p4','a',this)">Перше повідомлення</button>
-    <button class="tb" onclick="showSub('p4','b',this)">Рахунок</button>
-  </div>
-  <div id="p4-a" class="sub on">
-    <div class="blk"><div class="step-h"><span class="sn">1</span><span class="st">Надіслати клієнту</span></div>
-    <div class="mbox" data-uk="✅ Ваш варіант: Чіп-карта (без коду 95 і справки ДАІ)
+<div class="panel" id="p4">
+<div class="info-row"><span class="ic">1750 зл</span><span class="ic">3-4 тижні</span><span class="ic">Тільки паспорт + права</span></div>
+<div class="alert">Варіант для тих, у кого немає ні коду 95, ні справки ДАІ. Мінімум документів.</div>
+<div class="tabs">
+<button class="tb on" onclick="showSub('p4','a',this)">Перше повідомлення</button>
+<button class="tb" onclick="showSub('p4','b',this)">Доки ок → доставка</button>
+</div>
+<div class="sub on" id="p4-a">
+<div class="blk"><div class="step-h"><span class="sn">1</span><span class="st">Надіслати клієнту</span></div>
+<div class="mbox" data-ar="✅ خيارك: بطاقة السائق (بدون كود 95 أو شهادة مرور)
 
-💰 Вартість: 1750 зл
-⏱ Термін: 3–4 тижні
-📬 Оформляємо онлайн — приїжджати не потрібно
+💰 السعر: 1750 زلوتي
+⏱ المدة: 3–4 أسابيع
+📬 كل شيء عبر الإنترنت — لا حاجة للحضور
 
-Документів мінімум:
-— Паспорт (скан)
-— Водійське посвідчення (скан)
+الوثائق المطلوبة فقط:
+— جواز السفر (صورة)
+— رخصة القيادة (صورة)
 
-
-
-📦 Доставка оплачується окремо:
-— Польща: InPost — 30 зл
-— Європа: Nova Post / DPD — 25 євро
-— Україна: Nova Post — 85 зл
-— Білорусь: через наших учнів — безкоштовно
-
-Щоб одразу розуміти доставку, напишіть, будь ласка:
-— В якій країні ви зараз знаходитесь?
-— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
-— Зручніше поштомат чи доставка на адресу?
-
-Надішліть на KOD95PL.COM@GMAIL.COM або сюди."
-data-ru="✅ Ваш вариант: Чип-карта (без кода 95 и справки ГАИ)
-
-💰 Стоимость: 1750 зл
-⏱ Срок: 3–4 недели
-📬 Оформляем онлайн — приезжать не нужно
-
-Документов минимум:
-— Паспорт (скан)
-— Водительское удостоверение (скан)
-
-
-
-📦 Доставка оплачивается отдельно:
-— Польша: InPost — 30 зл
-— Европа: Nova Post / DPD — 25 евро
-— Украина: Nova Post — 85 зл
-— Беларусь: через наших учеников — бесплатно
-
-Чтобы сразу понимать доставку, напишите, пожалуйста:
-— В какой стране вы сейчас находитесь?
-— Куда нужно отправить карту: Польша / Европа / Украина / Беларусь?
-— Удобнее постамат или доставка на адрес?
-
-Отправьте на KOD95PL.COM@GMAIL.COM или здесь."
-data-en="✅ Your option: Driver card (no code 95 or traffic certificate needed)
+أرسل إلى KOD95PL.COM@GMAIL.COM أو هنا مباشرة." data-en="✅ Your option: Driver card (no code 95 or traffic certificate needed)
 
 💰 Price: 1750 PLN
 ⏱ Processing: 3–4 weeks
@@ -1019,20 +982,55 @@ To arrange delivery, please tell us:
 — Where should we send the card: Poland / Europe / Ukraine / Belarus?
 — Parcel locker or address delivery?
 
-Send to KOD95PL.COM@GMAIL.COM or here in DM."
-data-ar="✅ خيارك: بطاقة السائق (بدون كود 95 أو شهادة مرور)
+Send to KOD95PL.COM@GMAIL.COM or here in DM." data-ru="✅ Ваш вариант: Чип-карта (без кода 95 и справки ГАИ)
 
-💰 السعر: 1750 زلوتي
-⏱ المدة: 3–4 أسابيع
-📬 كل شيء عبر الإنترنت — لا حاجة للحضور
+💰 Стоимость: 1750 зл
+⏱ Срок: 3–4 недели
+📬 Оформляем онлайн — приезжать не нужно
 
-الوثائق المطلوبة فقط:
-— جواز السفر (صورة)
-— رخصة القيادة (صورة)
+Документов минимум:
+— Паспорт (скан)
+— Водительское удостоверение (скан)
 
-أرسل إلى KOD95PL.COM@GMAIL.COM أو هنا مباشرة.">✅ Ваш варіант: Чіп-карта (без коду 95 і справки ДАІ)
 
-💰 Вартість: 1750 зл
+
+📦 Доставка оплачивается отдельно:
+— Польша: InPost — 30 зл
+— Европа: Nova Post / DPD — 25 евро
+— Украина: Nova Post — 85 зл
+— Беларусь: через наших учеников — бесплатно
+
+Чтобы сразу понимать доставку, напишите, пожалуйста:
+— В какой стране вы сейчас находитесь?
+— Куда нужно отправить карту: Польша / Европа / Украина / Беларусь?
+— Удобнее постамат или доставка на адрес?
+
+Отправьте на KOD95PL.COM@GMAIL.COM или здесь." data-uk="✅ Ваш варіант: Чіп-карта (без коду 95 і справки ДАІ)
+
+💰 Вартість: 1750 зл + ДОСТАВКА ОКРЕМО
+⏱ Термін: 3–4 тижні
+📬 Оформляємо онлайн — приїжджати не потрібно
+
+Документів мінімум:
+— Паспорт (скан)
+— Водійське посвідчення (скан)
+
+
+
+📦 Доставка оплачується окремо:
+— Польща: InPost — 30 зл
+— Європа: Nova Post / DPD — 25 євро
+— Україна: Nova Post — 85 зл
+— Білорусь: через наших учнів — безкоштовно
+
+Щоб одразу розуміти доставку, напишіть, будь ласка:
+— В якій країні ви зараз знаходитесь?
+— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
+— Зручніше поштомат чи доставка на адресу?
+
+Надішліть на KOD95PL.COM@GMAIL.COM або сюди.">✅ Ваш варіант: Чіп-карта (без коду 95 і справки ДАІ)
+
+💰 Вартість: 1750 зл + ДОСТАВКА ОКРЕМО
 ⏱ Термін: 3–4 тижні
 📬 Оформляємо онлайн — приїжджати не потрібно
 
@@ -1054,111 +1052,82 @@ data-ar="✅ خيارك: بطاقة السائق (بدون كود 95 أو شها
 — Зручніше поштомат чи доставка на адресу?
 
 Надішліть на KOD95PL.COM@GMAIL.COM або сюди.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p4-b" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">2</span><span class="st">Рахунок</span></div>
-    <div class="mbox" data-uk="Документи перевірили ✅
-
-Рахунок: [ПОСИЛАННЯ / РЕКВІЗИТИ]
-Сума: 1750 зл
-
-Після оплати запускаємо. Термін 3–4 тижні.
-Після виготовлення — фото для перевірки, потім доставка."
-data-ru="Документы проверили ✅
-
-Счёт: [ССЫЛКА / РЕКВИЗИТЫ]
-Сумма: 1750 зл
-
-После оплаты запускаем. Срок 3–4 недели.
-После изготовления — фото для проверки, затем доставка."
-data-en="Documents checked ✅
-
-Invoice: [LINK / DETAILS]
-Amount: 1750 PLN
-
-After payment we start. Time: 3–4 weeks.
-Once ready — photo for verification, then delivery."
-data-ar="تم التحقق من الوثائق ✅
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p4-b">
+<div class="blk"><div class="step-h"><span class="sn">2</span><span class="st">Рахунок</span></div>
+<div class="mbox" data-ar="تم التحقق من الوثائق ✅
 
 الفاتورة: [رابط / تفاصيل]
 المبلغ: 1750 زلوتي
 
 بعد الدفع نبدأ. المدة: 3–4 أسابيع.
-بعد الانتهاء — صورة للتحقق، ثم التوصيل.">Документи перевірили ✅
+بعد الانتهاء — صورة للتحقق، ثم التوصيل." data-en="Documents checked ✅
 
-Рахунок: [ПОСИЛАННЯ / РЕКВІЗИТИ]
-Сума: 1750 зл
+Invoice: [LINK / DETAILS]
+Amount: 1750 PLN
 
-Після оплати запускаємо. Термін 3–4 тижні.
+After payment we start. Time: 3–4 weeks.
+Once ready — photo for verification, then delivery." data-ru="Документы проверили ✅
+
+Счёт: [ССЫЛКА / РЕКВИЗИТЫ]
+Сумма: 1750 зл
+
+После оплаты запускаем. Срок 3–4 недели.
+После изготовления — фото для проверки, затем доставка." data-uk="Документи перевірили — все в порядку ✅
+
+Щоб одразу розуміти доставку, напишіть, будь ласка:
+— В якій країні ви зараз знаходитесь?
+— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
+
+Після цього надсилаємо рахунок залежно від доставки:
+
+🇵🇱 Польща: 1750 зл + 30 зл доставка InPost
+🇪🇺 Європа: 1750 зл + 25 євро доставка Nova Post / DPD
+🇺🇦 Україна: 1750 зл + 85 зл доставка Nova Post
+🇧🇾 Білорусь: 1750 зл, доставка безкоштовно через наших учнів
+
+Рахунок / реквізити: [ПОСИЛАННЯ / РЕКВІЗИТИ]
+
+Після оплати — запускаємо в роботу. Термін 3–4 тижні.
+Після виготовлення — фото для перевірки, потім доставка.">Документи перевірили — все в порядку ✅
+
+Щоб одразу розуміти доставку, напишіть, будь ласка:
+— В якій країні ви зараз знаходитесь?
+— Куди потрібно відправити карту: Польща / Європа / Україна / Білорусь?
+
+Після цього надсилаємо рахунок залежно від доставки:
+
+🇵🇱 Польща: 1750 зл + 30 зл доставка InPost
+🇪🇺 Європа: 1750 зл + 25 євро доставка Nova Post / DPD
+🇺🇦 Україна: 1750 зл + 85 зл доставка Nova Post
+🇧🇾 Білорусь: 1750 зл, доставка безкоштовно через наших учнів
+
+Рахунок / реквізити: [ПОСИЛАННЯ / РЕКВІЗИТИ]
+
+Після оплати — запускаємо в роботу. Термін 3–4 тижні.
 Після виготовлення — фото для перевірки, потім доставка.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
 </div>
-
+</div>
 <!-- ===== P5: Аннулювання ===== -->
-<div id="p5" class="panel">
-  <div class="info-row"><span class="ic">200 зл</span><span class="ic">2 тижні</span></div>
-  <div class="alert-r">Потрібне якщо: є UA карта і хоче нову ПЛ, або до кінця поточної карти більше 60 днів.</div>
-  <div class="tabs">
-    <button class="tb on" onclick="showSub('p5','a',this)">Перевірка ситуації</button>
-    <button class="tb" onclick="showSub('p5','b',this)">Перше повідомлення</button>
-    <button class="tb" onclick="showSub('p5','c',this)">Чеклист</button>
-  </div>
-  <div id="p5-a" class="sub on">
-    <div class="blk"><div class="step-h"><span class="sn">!</span><span class="st">Спочатку уточнити дату карти</span></div>
-    <div class="mbox" data-uk="Уточніть, будь ласка — коли закінчується ваша поточна чіп-карта? (дата вказана на самій карті)"
-data-ru="Уточните, пожалуйста — когда заканчивается ваша текущая чип-карта? (дата указана на самой карте)"
-data-en="Could you please check — when does your current driver card expire? (the date is printed on the card itself)"
-data-ar="هل يمكنك التحقق من تاريخ انتهاء بطاقتك الحالية؟ (التاريخ مطبوع على البطاقة نفسها)">Уточніть, будь ласка — коли закінчується ваша поточна чіп-карта? (дата вказана на самій карті)</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-    <div class="alert">&lt;60 днів до кінця → одразу нова карта, аннулювання не треба<br>&gt;60 днів до кінця → спочатку аннулювання (200 зл), потім нова</div>
-  </div>
-  <div id="p5-b" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">1</span><span class="st">Надіслати клієнту</span></div>
-    <div class="mbox" data-uk="Зрозуміло. До кінця вашої карти ще більше 60 днів — тому спочатку потрібне аннулювання, і тільки після можна оформляти нову.
-
-❌ Аннулювання чіп-карти
-💰 Вартість: 200 зл
-⏱ Термін: 2 тижні
-
-Що надіслати:
-— Паспорт (обидві сторони)
-— Прописка
-— Ідентифікаційний номер
-— Фото вашої чіп-карти
-— Водійське посвідчення
-
-Надішліть на KOD95PL.COM@GMAIL.COM або сюди."
-data-ru="Понял. До конца вашей карты ещё больше 60 дней — поэтому сначала нужно аннулирование, и только после можно оформлять новую.
-
-❌ Аннулирование чип-карты
-💰 Стоимость: 200 зл
-⏱ Срок: 2 недели
-
-Что прислать:
-— Паспорт (обе стороны)
-— Прописка
-— Идентификационный номер
-— Фото вашей чип-карты
-— Водительское удостоверение
-
-Отправьте на KOD95PL.COM@GMAIL.COM или здесь."
-data-en="Understood. Your card still has more than 60 days left — so we first need to cancel it, and then apply for a new one.
-
-❌ Driver card cancellation
-💰 Price: 200 PLN
-⏱ Processing: 2 weeks
-
-What to send:
-— Passport (both sides)
-— Proof of registration
-— Tax ID number
-— Photo of your driver card
-— Driving licence
-
-Send to KOD95PL.COM@GMAIL.COM or here in DM."
-data-ar="حسناً. لا تزال بطاقتك صالحة لأكثر من 60 يوماً — لذا نحتاج أولاً إلى إلغائها، ثم نتقدم للحصول على بطاقة جديدة.
+<div class="panel" id="p5">
+<div class="info-row"><span class="ic">200 зл</span><span class="ic">2 тижні</span></div>
+<div class="alert-r">Потрібне якщо: є UA карта і хоче нову ПЛ, або до кінця поточної карти більше 60 днів.</div>
+<div class="tabs">
+<button class="tb on" onclick="showSub('p5','a',this)">Перевірка ситуації</button>
+<button class="tb" onclick="showSub('p5','b',this)">Перше повідомлення</button>
+<button class="tb" onclick="showSub('p5','c',this)">Чеклист</button>
+</div>
+<div class="sub on" id="p5-a">
+<div class="blk"><div class="step-h"><span class="sn">!</span><span class="st">Спочатку уточнити дату карти</span></div>
+<div class="mbox" data-ar="هل يمكنك التحقق من تاريخ انتهاء بطاقتك الحالية؟ (التاريخ مطبوع على البطاقة نفسها)" data-en="Could you please check — when does your current driver card expire? (the date is printed on the card itself)" data-ru="Уточните, пожалуйста — когда заканчивается ваша текущая чип-карта? (дата указана на самой карте)" data-uk="Уточніть, будь ласка — коли закінчується ваша поточна чіп-карта? (дата вказана на самій карті)">Уточніть, будь ласка — коли закінчується ваша поточна чіп-карта? (дата вказана на самій карті)</div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+<div class="alert">&lt;60 днів до кінця → одразу нова карта, аннулювання не треба<br/>&gt;60 днів до кінця → спочатку аннулювання (200 зл), потім нова</div>
+</div>
+<div class="sub" id="p5-b">
+<div class="blk"><div class="step-h"><span class="sn">1</span><span class="st">Надіслати клієнту</span></div>
+<div class="mbox" data-ar="حسناً. لا تزال بطاقتك صالحة لأكثر من 60 يوماً — لذا نحتاج أولاً إلى إلغائها، ثم نتقدم للحصول على بطاقة جديدة.
 
 ❌ إلغاء بطاقة السائق
 💰 السعر: 200 زلوتي
@@ -1171,7 +1140,46 @@ data-ar="حسناً. لا تزال بطاقتك صالحة لأكثر من 60 ي
 — صورة بطاقتك الحالية
 — رخصة القيادة
 
-أرسل إلى KOD95PL.COM@GMAIL.COM أو هنا مباشرة.">Зрозуміло. До кінця вашої карти ще більше 60 днів — тому спочатку потрібне аннулювання, і тільки після можна оформляти нову.
+أرسل إلى KOD95PL.COM@GMAIL.COM أو هنا مباشرة." data-en="Understood. Your card still has more than 60 days left — so we first need to cancel it, and then apply for a new one.
+
+❌ Driver card cancellation
+💰 Price: 200 PLN
+⏱ Processing: 2 weeks
+
+What to send:
+— Passport (both sides)
+— Proof of registration
+— Tax ID number
+— Photo of your driver card
+— Driving licence
+
+Send to KOD95PL.COM@GMAIL.COM or here in DM." data-ru="Понял. До конца вашей карты ещё больше 60 дней — поэтому сначала нужно аннулирование, и только после можно оформлять новую.
+
+❌ Аннулирование чип-карты
+💰 Стоимость: 200 зл
+⏱ Срок: 2 недели
+
+Что прислать:
+— Паспорт (обе стороны)
+— Прописка
+— Идентификационный номер
+— Фото вашей чип-карты
+— Водительское удостоверение
+
+Отправьте на KOD95PL.COM@GMAIL.COM или здесь." data-uk="Зрозуміло. До кінця вашої карти ще більше 60 днів — тому спочатку потрібне аннулювання, і тільки після можна оформляти нову.
+
+❌ Аннулювання чіп-карти
+💰 Вартість: 200 зл
+⏱ Термін: 2 тижні
+
+Що надіслати:
+— Паспорт (обидві сторони)
+— Прописка
+— Ідентифікаційний номер
+— Фото вашої чіп-карти
+— Водійське посвідчення
+
+Надішліть на KOD95PL.COM@GMAIL.COM або сюди.">Зрозуміло. До кінця вашої карти ще більше 60 днів — тому спочатку потрібне аннулювання, і тільки після можна оформляти нову.
 
 ❌ Аннулювання чіп-карти
 💰 Вартість: 200 зл
@@ -1185,160 +1193,73 @@ data-ar="حسناً. لا تزال بطاقتك صالحة لأكثر من 60 ي
 — Водійське посвідчення
 
 Надішліть на KOD95PL.COM@GMAIL.COM або сюди.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p5-c" class="sub">
-    <ul class="cl">
-      <li><span class="ci">✓</span>Паспорт UA — обидві сторони</li>
-      <li><span class="ci">✓</span>Прописка</li>
-      <li><span class="ci">✓</span>Ідентифікаційний номер</li>
-      <li><span class="ci">✓</span>Фото чіп-карти (чітко, всі дані видно)</li>
-      <li><span class="ci">✓</span>Водійське посвідчення</li>
-    </ul>
-  </div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
 </div>
-
+<div class="sub" id="p5-c">
+<ul class="cl">
+<li><span class="ci">✓</span>Паспорт UA — обидві сторони</li>
+<li><span class="ci">✓</span>Прописка</li>
+<li><span class="ci">✓</span>Ідентифікаційний номер</li>
+<li><span class="ci">✓</span>Фото чіп-карти (чітко, всі дані видно)</li>
+<li><span class="ci">✓</span>Водійське посвідчення</li>
+</ul>
+</div>
+</div>
 <!-- ===== P6: Квалайфер ===== -->
-<div id="p6" class="panel">
-  <div class="alert">Клієнт написав "хочу чіп-карту" / "скільки коштує" — варіант невідомий. Надсилаємо квалайфер.</div>
-  <div class="tabs">
-    <button class="tb on" onclick="showSub('p6','a',this)">Квалайфер</button>
-    <button class="tb" onclick="showSub('p6','b',this)">Таблиця варіантів</button>
-  </div>
-  <div id="p6-a" class="sub on">
-    <div class="blk"><div class="step-h"><span class="sn">1</span><span class="st">Надіслати клієнту</span></div>
-    <div class="mbox" data-uk="Привіт! Щоб підібрати варіант і назвати точну ціну — дайте відповідь на 2 питання:
-
-1️⃣ Що є з документів?
-— Польський код 95
-— Справка з ДАІ з апостилем
-— Європейський (пластиковий) код 95
-— Нічого з вище перерахованого
-
-2️⃣ Де знаходитесь?
-— Польща
-— Інша країна Європи
-— Білорусь
-— Україна"
-data-ru="Привет! Чтобы подобрать вариант и назвать точную цену — ответьте на 2 вопроса:
-
-1️⃣ Что есть из документов?
-— Польский код 95
-— Справка из ГАИ с апостилем
-— Европейский (пластиковый) код 95
-— Ничего из вышеперечисленного
-
-2️⃣ Где находитесь?
-— Польша
-— Другая страна Европы
-— Беларусь
-— Украина"
-data-en="Hi! To find the right option and give you an exact price — please answer 2 questions:
-
-1️⃣ What documents do you have?
-— Polish code 95
-— Traffic police certificate with apostille
-— European (plastic) code 95
-— None of the above
-
-2️⃣ Where are you located?
-— Poland
-— Another EU country
-— Belarus
-— Ukraine"
-data-ar="مرحباً! للعثور على الخيار المناسب وإعطائك السعر الدقيق — يرجى الإجابة على سؤالين:
-
-1️⃣ ما الوثائق التي لديك؟
-— كود 95 البولندي
-— شهادة مرور مع الأبوستيل
-— كود 95 الأوروبي البلاستيكي
-— لا شيء مما سبق
-
-2️⃣ أين أنت؟
-— بولندا
-— دولة أوروبية أخرى
-— بيلاروسيا
-— أوكرانيا">Привіт! Щоб підібрати варіант і назвати точну ціну — дайте відповідь на 2 питання:
-
-1️⃣ Що є з документів?
-— Польський код 95
-— Справка з ДАІ з апостилем
-— Європейський (пластиковий) код 95
-— Нічого з вище перерахованого
-
-2️⃣ Де знаходитесь?
-— Польща
-— Інша країна Європи
-— Білорусь
-— Україна</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p6-b" class="sub">
-    <ul class="cl">
-      <li><span class="ci">🟦</span>Польський код 95 → <b>560 зл, 10-11 р/д</b></li>
-      <li><span class="ci">🟡</span>Справка ДАІ з апостилем → <b>660 зл, 11-12 р/д</b></li>
-      <li><span class="ci">🟢</span>Євро (пластиковий) код 95 → <b>760 зл, 7-10 р/д</b></li>
-      <li><span class="ci">🌍</span>Нічого немає → <b>1750 зл, 3-4 тижні</b></li>
-      <li><span class="wi">❌</span>UA карта + строк &gt;60 днів → <b>аннулювання 200 зл спочатку</b></li>
-    </ul>
-  </div>
+<div class="panel" id="p6">
+<div class="alert">Клієнт написав "хочу чіп-карту" / "скільки коштує" — варіант невідомий. Надсилаємо квалайфер.</div>
+<div class="tabs">
+<button class="tb on" onclick="showSub('p6','a',this)">Перше повідомлення</button>
+<button class="tb" onclick="showSub('p6','b',this)">Таблиця варіантів</button>
 </div>
+<div class="sub on" id="p6-a">
+<div class="blk"><div class="step-h"><span class="sn">1</span><span class="st">Надіслати клієнту</span></div>
+<div class="mbox" data-ar="مرحباً! لاختيار الخيار المناسب وإعطائك السعر الدقيق، يرجى الإجابة على 3 أسئلة:
 
+1️⃣ هل لديك حالياً بطاقة سائق صالحة من أي دولة؟
+2️⃣ هل لديك كود 95؟ من أي دولة؟
+3️⃣ أين أنت الآن؟" data-en="Hello! To choose the right option and give the exact price, please answer 3 questions:
+
+1️⃣ Do you already have a valid driver card from any country?
+2️⃣ Do you have code 95, and from which country?
+3️⃣ Where are you located now?" data-ru="Здравствуйте! Чтобы подобрать нужный вариант и назвать точную цену — ответьте на 3 вопроса:
+
+1️⃣ У вас уже есть актуальная чип-карта любой страны?
+2️⃣ Есть ли код 95, какой страны?
+3️⃣ Где сейчас находитесь?" data-uk="Вітаю! Щоб підібрати потрібний варіант і назвати точну ціну — дайте відповідь на 3 питання:
+
+1️⃣ Чи у вас вже є актуальна чіп-карта (будь-якої країни)?
+2️⃣ Чи є код 95, якої країни?
+3️⃣ Де зараз знаходитесь?">Вітаю! Щоб підібрати потрібний варіант і назвати точну ціну — дайте відповідь на 3 питання:
+
+1️⃣ Чи у вас вже є актуальна чіп-карта (будь-якої країни)?
+2️⃣ Чи є код 95, якої країни?
+3️⃣ Де зараз знаходитесь?</div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p6-b">
+<ul class="cl">
+<li><span class="ci">🟦</span>Польський код 95 → <b>560 зл, 10-11 р/д</b></li>
+<li><span class="ci">🟡</span>Справка ДАІ з апостилем → <b>660 зл, 11-12 р/д</b></li>
+<li><span class="ci">🟢</span>Євро (пластиковий) код 95 → <b>760 зл, 7-10 р/д</b></li>
+<li><span class="ci">🌍</span>Нічого немає → <b>1750 зл, 3-4 тижні</b></li>
+<li><span class="wi">❌</span>UA карта + строк &gt;60 днів → <b>аннулювання 200 зл спочатку</b></li>
+</ul>
+</div>
+</div>
 <!-- ===== P7: Доставка ===== -->
-<div id="p7" class="panel">
-  <div class="alert-g">Цей блок надсилається після підтвердження даних карти.</div>
-  <div class="tabs">
-    <button class="tb on" onclick="showSub('p7','a',this)">🇵🇱 Польща</button>
-    <button class="tb" onclick="showSub('p7','b',this)">🇪🇺 Європа</button>
-    <button class="tb" onclick="showSub('p7','c',this)">🇧🇾 Білорусь</button>
-    <button class="tb" onclick="showSub('p7','d',this)">🇺🇦 Україна</button>
-    <button class="tb" onclick="showSub('p7','e',this)">Форма адреси</button>
-  </div>
-  <div id="p7-a" class="sub on">
-    <div class="blk"><div class="step-h"><span class="sn">📬</span><span class="st">Польща — InPost, 30 зл</span></div>
-    <div class="mbox" data-uk="Відмінно! Для відправки по Польщі — доставка InPost, вартість 30 зл.
-
-Вкажіть, будь ласка:
-— Спосіб: поштомат або на адресу
-— Ім'я та прізвище отримувача:
-— Номер телефону:
-— Місто:
-— Вулиця, будинок, квартира:
-— Поштовий індекс:
-
-Якщо вже оплачували доставку — просто надішліть дані, відправляємо одразу.
-Якщо ні — надішліть дані, ми виставимо суму та реквізити. Відправляємо після оплати.
-
-⚠️ За доставку відповідальності не несемо. В 99% випадків посилка повертається до нас — переробляти не доведеться."
-data-ru="Отлично! Для отправки по Польше — доставка InPost, стоимость 30 зл.
-
-Укажите, пожалуйста:
-— Способ: постамат или на адрес
-— Имя и фамилия получателя:
-— Номер телефона:
-— Город:
-— Улица, дом, квартира:
-— Почтовый индекс:
-
-Если уже оплачивали доставку — просто пришлите данные, отправляем сразу.
-Если нет — пришлите данные, мы выставим сумму и реквизиты. Отправляем после оплаты.
-
-⚠️ За доставку ответственности не несём. В 99% случаев посылка возвращается к нам — переделывать не придётся."
-data-en="Great! For delivery in Poland — InPost, price 30 PLN.
-
-Please provide:
-— Method: parcel locker or home address
-— Recipient name:
-— Phone number:
-— City:
-— Street, building, flat:
-— Postal code:
-
-If you already paid for delivery — just send the details and we'll ship immediately.
-If not — send the details, we'll send you the amount. We ship after payment.
-
-⚠️ We are not liable for delivery issues. In 99% of cases, if the parcel doesn't arrive, it returns to us — no need to redo."
-data-ar="ممتاز! للتوصيل داخل بولندا — خدمة InPost، السعر 30 زلوتي.
+<div class="panel" id="p7">
+<div class="alert-g">Цей блок надсилається після підтвердження даних карти.</div>
+<div class="tabs">
+<button class="tb on" onclick="showSub('p7','a',this)">🇵🇱 Польща</button>
+<button class="tb" onclick="showSub('p7','b',this)">🇪🇺 Європа</button>
+<button class="tb" onclick="showSub('p7','c',this)">🇧🇾 Білорусь</button>
+<button class="tb" onclick="showSub('p7','d',this)">🇺🇦 Україна</button>
+<button class="tb" onclick="showSub('p7','e',this)">Форма адреси</button>
+</div>
+<div class="sub on" id="p7-a">
+<div class="blk"><div class="step-h"><span class="sn">📬</span><span class="st">Польща — InPost, 30 зл</span></div>
+<div class="mbox" data-ar="ممتاز! للتوصيل داخل بولندا — خدمة InPost، السعر 30 زلوتي.
 
 يرجى تزويدنا بـ:
 — الطريقة: خزانة البريد أو عنوان المنزل
@@ -1351,7 +1272,46 @@ data-ar="ممتاز! للتوصيل داخل بولندا — خدمة InPost، 
 إذا دفعت رسوم التوصيل مسبقاً — أرسل البيانات وسنشحن فوراً.
 إذا لا — أرسل البيانات وسنرسل لك المبلغ. نشحن بعد الدفع.
 
-⚠️ لا نتحمل مسؤولية مشاكل التوصيل. في 99% من الحالات ترجع الطرود إلينا — لا حاجة لإعادة المعالجة.">Відмінно! Для відправки по Польщі — доставка InPost, вартість 30 зл.
+⚠️ لا نتحمل مسؤولية مشاكل التوصيل. في 99% من الحالات ترجع الطرود إلينا — لا حاجة لإعادة المعالجة." data-en="Great! For delivery in Poland — InPost, price 30 PLN.
+
+Please provide:
+— Method: parcel locker or home address
+— Recipient name:
+— Phone number:
+— City:
+— Street, building, flat:
+— Postal code:
+
+If you already paid for delivery — just send the details and we'll ship immediately.
+If not — send the details, we'll send you the amount. We ship after payment.
+
+⚠️ We are not liable for delivery issues. In 99% of cases, if the parcel doesn't arrive, it returns to us — no need to redo." data-ru="Отлично! Для отправки по Польше — доставка InPost, стоимость 30 зл.
+
+Укажите, пожалуйста:
+— Способ: постамат или на адрес
+— Имя и фамилия получателя:
+— Номер телефона:
+— Город:
+— Улица, дом, квартира:
+— Почтовый индекс:
+
+Если уже оплачивали доставку — просто пришлите данные, отправляем сразу.
+Если нет — пришлите данные, мы выставим сумму и реквизиты. Отправляем после оплаты.
+
+⚠️ За доставку ответственности не несём. В 99% случаев посылка возвращается к нам — переделывать не придётся." data-uk="Відмінно! Для відправки по Польщі — доставка InPost, вартість 30 зл.
+
+Вкажіть, будь ласка:
+— Спосіб: поштомат або на адресу
+— Ім'я та прізвище отримувача:
+— Номер телефону:
+— Місто:
+— Вулиця, будинок, квартира:
+— Поштовий індекс:
+
+Якщо вже оплачували доставку — просто надішліть дані, відправляємо одразу.
+Якщо ні — надішліть дані, ми виставимо суму та реквізити. Відправляємо після оплати.
+
+⚠️ За доставку відповідальності не несемо. В 99% випадків посилка повертається до нас — переробляти не доведеться.">Відмінно! Для відправки по Польщі — доставка InPost, вартість 30 зл.
 
 Вкажіть, будь ласка:
 — Спосіб: поштомат або на адресу
@@ -1365,53 +1325,11 @@ data-ar="ممتاز! للتوصيل داخل بولندا — خدمة InPost، 
 Якщо ні — надішліть дані, ми виставимо суму та реквізити. Відправляємо після оплати.
 
 ⚠️ За доставку відповідальності не несемо. В 99% випадків посилка повертається до нас — переробляти не доведеться.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p7-b" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">📬</span><span class="st">Європа — Nova Post / DPD, 25 €</span></div>
-    <div class="mbox" data-uk="Для відправки по Європі — Nova Post (більшість країн) або DPD, вартість 25 євро.
-
-Вкажіть, будь ласка:
-— Спосіб: поштомат або на адресу
-— Ім'я та прізвище отримувача:
-— Номер телефону:
-— Країна, місто:
-— Вулиця, будинок, квартира:
-— Поштовий індекс:
-
-Якщо вже оплачували — надішліть дані, відправляємо одразу.
-Якщо ні — надішліть дані, виставимо рахунок. Відправляємо після оплати.
-
-⚠️ За доставку відповідальності не несемо. В 99% випадків посилка повертається до нас."
-data-ru="Для отправки по Европе — Nova Post (большинство стран) или DPD, стоимость 25 евро.
-
-Укажите, пожалуйста:
-— Способ: постамат или на адрес
-— Имя и фамилия получателя:
-— Номер телефона:
-— Страна, город:
-— Улица, дом, квартира:
-— Почтовый индекс:
-
-Если уже оплачивали — пришлите данные, отправляем сразу.
-Если нет — пришлите данные, выставим счёт. Отправляем после оплаты.
-
-⚠️ За доставку ответственности не несём. В 99% случаев посылка возвращается к нам."
-data-en="For delivery across Europe — Nova Post (most countries) or DPD, price 25 EUR.
-
-Please provide:
-— Method: parcel locker or home address
-— Recipient name:
-— Phone number:
-— Country, city:
-— Street, building, flat:
-— Postal code:
-
-If already paid — send the details and we ship right away.
-If not — send the details and we'll invoice you. We ship after payment.
-
-⚠️ We are not liable for delivery issues. In 99% of cases parcels return to us."
-data-ar="للتوصيل في أوروبا — Nova Post (معظم الدول) أو DPD، السعر 25 يورو.
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p7-b">
+<div class="blk"><div class="step-h"><span class="sn">📬</span><span class="st">Європа — Nova Post / DPD, 25 €</span></div>
+<div class="mbox" data-ar="للتوصيل في أوروبا — Nova Post (معظم الدول) أو DPD، السعر 25 يورو.
 
 يرجى تزويدنا بـ:
 — الطريقة: خزانة البريد أو عنوان المنزل
@@ -1424,7 +1342,46 @@ data-ar="للتوصيل في أوروبا — Nova Post (معظم الدول) أ
 إذا دفعت مسبقاً — أرسل البيانات وسنشحن فوراً.
 إذا لا — أرسل البيانات وسنرسل الفاتورة. نشحن بعد الدفع.
 
-⚠️ لا نتحمل مسؤولية مشاكل التوصيل. في 99% من الحالات ترجع الطرود إلينا.">Для відправки по Європі — Nova Post (більшість країн) або DPD, вартість 25 євро.
+⚠️ لا نتحمل مسؤولية مشاكل التوصيل. في 99% من الحالات ترجع الطرود إلينا." data-en="For delivery across Europe — Nova Post (most countries) or DPD, price 25 EUR.
+
+Please provide:
+— Method: parcel locker or home address
+— Recipient name:
+— Phone number:
+— Country, city:
+— Street, building, flat:
+— Postal code:
+
+If already paid — send the details and we ship right away.
+If not — send the details and we'll invoice you. We ship after payment.
+
+⚠️ We are not liable for delivery issues. In 99% of cases parcels return to us." data-ru="Для отправки по Европе — Nova Post (большинство стран) или DPD, стоимость 25 евро.
+
+Укажите, пожалуйста:
+— Способ: постамат или на адрес
+— Имя и фамилия получателя:
+— Номер телефона:
+— Страна, город:
+— Улица, дом, квартира:
+— Почтовый индекс:
+
+Если уже оплачивали — пришлите данные, отправляем сразу.
+Если нет — пришлите данные, выставим счёт. Отправляем после оплаты.
+
+⚠️ За доставку ответственности не несём. В 99% случаев посылка возвращается к нам." data-uk="Для відправки по Європі — Nova Post (більшість країн) або DPD, вартість 25 євро.
+
+Вкажіть, будь ласка:
+— Спосіб: поштомат або на адресу
+— Ім'я та прізвище отримувача:
+— Номер телефону:
+— Країна, місто:
+— Вулиця, будинок, квартира:
+— Поштовий індекс:
+
+Якщо вже оплачували — надішліть дані, відправляємо одразу.
+Якщо ні — надішліть дані, виставимо рахунок. Відправляємо після оплати.
+
+⚠️ За доставку відповідальності не несемо. В 99% випадків посилка повертається до нас.">Для відправки по Європі — Nova Post (більшість країн) або DPD, вартість 25 євро.
 
 Вкажіть, будь ласка:
 — Спосіб: поштомат або на адресу
@@ -1438,41 +1395,11 @@ data-ar="للتوصيل في أوروبا — Nova Post (معظم الدول) أ
 Якщо ні — надішліть дані, виставимо рахунок. Відправляємо після оплати.
 
 ⚠️ За доставку відповідальності не несемо. В 99% випадків посилка повертається до нас.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p7-c" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">📬</span><span class="st">Білорусь — через учнів, безкоштовно</span></div>
-    <div class="mbox" data-uk="Для відправки в Білорусь — передаємо через наших учнів, які регулярно їздять туди. Безкоштовно 🍫
-
-Орієнтовний час передачі — узгоджуємо індивідуально.
-
-Вкажіть, будь ласка:
-— Ваше місто в Білорусі:
-— Зручний спосіб отримання (зустріч, поштова скринька, інше):
-— Ім'я та номер телефону для зв'язку:
-
-Як тільки карта буде готова — уточнимо дату найближчої передачі."
-data-ru="Для отправки в Беларусь — передаём через наших учеников, которые регулярно туда едут. Бесплатно 🍫
-
-Ориентировочное время передачи — согласовываем индивидуально.
-
-Укажите, пожалуйста:
-— Ваш город в Беларуси:
-— Удобный способ получения (встреча, почтовый ящик, другое):
-— Имя и номер телефона для связи:
-
-Как только карта будет готова — уточним дату ближайшей передачи."
-data-en="For delivery to Belarus — we pass cards through our students who regularly travel there. Free of charge 🍫
-
-Estimated handover time — arranged individually.
-
-Please provide:
-— Your city in Belarus:
-— Preferred handover method (in-person meeting, letterbox, other):
-— Name and phone number:
-
-Once the card is ready, we'll confirm the nearest handover date."
-data-ar="للتوصيل إلى بيلاروسيا — نسلّم البطاقات عبر طلابنا الذين يسافرون هناك بانتظام. مجاناً 🍫
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p7-c">
+<div class="blk"><div class="step-h"><span class="sn">📬</span><span class="st">Білорусь — через учнів, безкоштовно</span></div>
+<div class="mbox" data-ar="للتوصيل إلى بيلاروسيا — نسلّم البطاقات عبر طلابنا الذين يسافرون هناك بانتظام. مجاناً 🍫
 
 وقت التسليم المتوقع — يُحدد بشكل فردي.
 
@@ -1481,7 +1408,34 @@ data-ar="للتوصيل إلى بيلاروسيا — نسلّم البطاقا�
 — طريقة الاستلام المفضلة (لقاء شخصي، صندوق بريد، أخرى):
 — الاسم ورقم الهاتف:
 
-عندما تكون البطاقة جاهزة — سنؤكد موعد أقرب تسليم.">Для відправки в Білорусь — передаємо через наших учнів, які регулярно їздять туди. Безкоштовно 🍫
+عندما تكون البطاقة جاهزة — سنؤكد موعد أقرب تسليم." data-en="For delivery to Belarus — we pass cards through our students who regularly travel there. Free of charge 🍫
+
+Estimated handover time — arranged individually.
+
+Please provide:
+— Your city in Belarus:
+— Preferred handover method (in-person meeting, letterbox, other):
+— Name and phone number:
+
+Once the card is ready, we'll confirm the nearest handover date." data-ru="Для отправки в Беларусь — передаём через наших учеников, которые регулярно туда едут. Бесплатно 🍫
+
+Ориентировочное время передачи — согласовываем индивидуально.
+
+Укажите, пожалуйста:
+— Ваш город в Беларуси:
+— Удобный способ получения (встреча, почтовый ящик, другое):
+— Имя и номер телефона для связи:
+
+Как только карта будет готова — уточним дату ближайшей передачи." data-uk="Для відправки в Білорусь — передаємо через наших учнів, які регулярно їздять туди. Безкоштовно 🍫
+
+Орієнтовний час передачі — узгоджуємо індивідуально.
+
+Вкажіть, будь ласка:
+— Ваше місто в Білорусі:
+— Зручний спосіб отримання (зустріч, поштова скринька, інше):
+— Ім'я та номер телефону для зв'язку:
+
+Як тільки карта буде готова — уточнимо дату найближчої передачі.">Для відправки в Білорусь — передаємо через наших учнів, які регулярно їздять туди. Безкоштовно 🍫
 
 Орієнтовний час передачі — узгоджуємо індивідуально.
 
@@ -1491,53 +1445,11 @@ data-ar="للتوصيل إلى بيلاروسيا — نسلّم البطاقا�
 — Ім'я та номер телефону для зв'язку:
 
 Як тільки карта буде готова — уточнимо дату найближчої передачі.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p7-d" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">📬</span><span class="st">Україна — Nova Post, 85 зл</span></div>
-    <div class="mbox" data-uk="Для відправки в Україну — Nova Post, вартість 85 зл.
-
-Вкажіть, будь ласка:
-— Спосіб: поштомат або на адресу
-— Ім'я та прізвище отримувача:
-— Номер телефону:
-— Місто:
-— Вулиця, будинок, квартира / номер відділення НП:
-— Поштовий індекс:
-
-Якщо вже оплачували — надішліть дані, відправляємо одразу.
-Якщо ні — надішліть дані, виставимо рахунок. Відправляємо після оплати.
-
-⚠️ За доставку відповідальності не несемо. В 99% випадків посилка повертається до нас."
-data-ru="Для отправки на Украину — Nova Post, стоимость 85 зл.
-
-Укажите, пожалуйста:
-— Способ: постамат или на адрес
-— Имя и фамилия получателя:
-— Номер телефона:
-— Город:
-— Улица, дом, квартира / номер отделения НП:
-— Почтовый индекс:
-
-Если уже оплачивали — пришлите данные, отправляем сразу.
-Если нет — пришлите данные, выставим счёт. Отправляем после оплаты.
-
-⚠️ За доставку ответственности не несём. В 99% случаев посылка возвращается к нам."
-data-en="For delivery to Ukraine — Nova Post, price 85 PLN.
-
-Please provide:
-— Method: parcel locker or home address
-— Recipient name:
-— Phone number:
-— City:
-— Street, building, flat / Nova Post branch number:
-— Postal code:
-
-If already paid — send details and we ship right away.
-If not — send details and we'll invoice you. We ship after payment.
-
-⚠️ We are not liable for delivery. In 99% of cases parcels return to us."
-data-ar="للتوصيل إلى أوكرانيا — Nova Post، السعر 85 زلوتي.
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p7-d">
+<div class="blk"><div class="step-h"><span class="sn">📬</span><span class="st">Україна — Nova Post, 85 зл</span></div>
+<div class="mbox" data-ar="للتوصيل إلى أوكرانيا — Nova Post، السعر 85 زلوتي.
 
 يرجى تزويدنا بـ:
 — الطريقة: خزانة البريد أو عنوان المنزل
@@ -1550,7 +1462,46 @@ data-ar="للتوصيل إلى أوكرانيا — Nova Post، السعر 85 ز
 إذا دفعت مسبقاً — أرسل البيانات وسنشحن فوراً.
 إذا لا — أرسل البيانات وسنرسل الفاتورة. نشحن بعد الدفع.
 
-⚠️ لا نتحمل مسؤولية مشاكل التوصيل. في 99% من الحالات ترجع الطرود إلينا.">Для відправки в Україну — Nova Post, вартість 85 зл.
+⚠️ لا نتحمل مسؤولية مشاكل التوصيل. في 99% من الحالات ترجع الطرود إلينا." data-en="For delivery to Ukraine — Nova Post, price 85 PLN.
+
+Please provide:
+— Method: parcel locker or home address
+— Recipient name:
+— Phone number:
+— City:
+— Street, building, flat / Nova Post branch number:
+— Postal code:
+
+If already paid — send details and we ship right away.
+If not — send details and we'll invoice you. We ship after payment.
+
+⚠️ We are not liable for delivery. In 99% of cases parcels return to us." data-ru="Для отправки на Украину — Nova Post, стоимость 85 зл.
+
+Укажите, пожалуйста:
+— Способ: постамат или на адрес
+— Имя и фамилия получателя:
+— Номер телефона:
+— Город:
+— Улица, дом, квартира / номер отделения НП:
+— Почтовый индекс:
+
+Если уже оплачивали — пришлите данные, отправляем сразу.
+Если нет — пришлите данные, выставим счёт. Отправляем после оплаты.
+
+⚠️ За доставку ответственности не несём. В 99% случаев посылка возвращается к нам." data-uk="Для відправки в Україну — Nova Post, вартість 85 зл.
+
+Вкажіть, будь ласка:
+— Спосіб: поштомат або на адресу
+— Ім'я та прізвище отримувача:
+— Номер телефону:
+— Місто:
+— Вулиця, будинок, квартира / номер відділення НП:
+— Поштовий індекс:
+
+Якщо вже оплачували — надішліть дані, відправляємо одразу.
+Якщо ні — надішліть дані, виставимо рахунок. Відправляємо після оплати.
+
+⚠️ За доставку відповідальності не несемо. В 99% випадків посилка повертається до нас.">Для відправки в Україну — Nova Post, вартість 85 зл.
 
 Вкажіть, будь ласка:
 — Спосіб: поштомат або на адресу
@@ -1564,43 +1515,40 @@ data-ar="للتوصيل إلى أوكرانيا — Nova Post، السعر 85 ز
 Якщо ні — надішліть дані, виставимо рахунок. Відправляємо після оплати.
 
 ⚠️ За доставку відповідальності не несемо. В 99% випадків посилка повертається до нас.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p7-e" class="sub">
-    <div class="alert">Якщо клієнт не знає як заповнити — надіслати цей шаблон</div>
-    <div class="blk"><div class="step-h"><span class="sn">📋</span><span class="st">Порожня форма адреси</span></div>
-    <div class="mbox" data-uk="Для оформлення доставки вкажіть:
-
-— Спосіб: поштомат або на адресу
-— Ім'я та прізвище отримувача:
-— Номер телефону отримувача:
-— Країна, місто:
-— Вулиця, номер будинку, квартира:
-— Поштовий індекс:"
-data-ru="Для оформления доставки укажите:
-
-— Способ: постамат или на адрес
-— Имя и фамилия получателя:
-— Номер телефона получателя:
-— Страна, город:
-— Улица, номер дома, квартира:
-— Почтовый индекс:"
-data-en="For delivery, please provide:
-
-— Method: parcel locker or home address
-— Recipient full name:
-— Recipient phone number:
-— Country, city:
-— Street, building number, flat:
-— Postal code:"
-data-ar="لترتيب التوصيل، يرجى تزويدنا بـ:
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p7-e">
+<div class="alert">Якщо клієнт не знає як заповнити — надіслати цей шаблон</div>
+<div class="blk"><div class="step-h"><span class="sn">📋</span><span class="st">Порожня форма адреси</span></div>
+<div class="mbox" data-ar="لترتيب التوصيل، يرجى تزويدنا بـ:
 
 — الطريقة: خزانة البريد أو عنوان المنزل
 — الاسم الكامل للمستلم:
 — رقم هاتف المستلم:
 — الدولة، المدينة:
 — الشارع، رقم المبنى، الشقة:
-— الرمز البريدي:">Для оформлення доставки вкажіть:
+— الرمز البريدي:" data-en="For delivery, please provide:
+
+— Method: parcel locker or home address
+— Recipient full name:
+— Recipient phone number:
+— Country, city:
+— Street, building number, flat:
+— Postal code:" data-ru="Для оформления доставки укажите:
+
+— Способ: постамат или на адрес
+— Имя и фамилия получателя:
+— Номер телефона получателя:
+— Страна, город:
+— Улица, номер дома, квартира:
+— Почтовый индекс:" data-uk="Для оформлення доставки вкажіть:
+
+— Спосіб: поштомат або на адресу
+— Ім'я та прізвище отримувача:
+— Номер телефону отримувача:
+— Країна, місто:
+— Вулиця, номер будинку, квартира:
+— Поштовий індекс:">Для оформлення доставки вкажіть:
 
 — Спосіб: поштомат або на адресу
 — Ім'я та прізвище отримувача:
@@ -1608,225 +1556,194 @@ data-ar="لترتيب التوصيل، يرجى تزويدنا بـ:
 — Країна, місто:
 — Вулиця, номер будинку, квартира:
 — Поштовий індекс:</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
 </div>
-
+</div>
 <!-- ===== P8: Проблеми з доками ===== -->
-<div id="p8" class="panel">
-  <div class="tabs">
-    <button class="tb on" onclick="showSub('p8','a',this)">Номери не збігаються</button>
-    <button class="tb" onclick="showSub('p8','b',this)">Стара справка / немає апостиля</button>
-    <button class="tb" onclick="showSub('p8','c',this)">Погана якість</button>
-    <button class="tb" onclick="showSub('p8','d',this)">Селфі / підпис</button>
-  </div>
-  <div id="p8-a" class="sub on">
-    <div class="blk"><div class="step-h"><span class="sn">!</span><span class="st">Номери відрізняються</span></div>
-    <div class="mbox" data-uk="Перевірили документи. Є нюанс: номер на правах і на коді 95 відрізняються — без збігу в оформленні відмовлять.
+<div class="panel" id="p8">
+<div class="tabs">
+<button class="tb on" onclick="showSub('p8','a',this)">Номери не збігаються</button>
+<button class="tb" onclick="showSub('p8','b',this)">Стара справка / немає апостиля</button>
+<button class="tb" onclick="showSub('p8','c',this)">Погана якість</button>
+<button class="tb" onclick="showSub('p8','d',this)">Селфі / підпис</button>
+</div>
+<div class="sub on" id="p8-a">
+<div class="blk"><div class="step-h"><span class="sn">!</span><span class="st">Номери відрізняються</span></div>
+<div class="mbox" data-ar="راجعنا الوثائق. هناك مشكلة: رقم رخصة القيادة لا يتطابق مع رقم كود 95 — سيُرفض الطلب بدون تطابق.
 
-Перевірте, будь ласка, чи правильно відправили документи, і надішліть повторно."
-data-ru="Проверили документы. Есть нюанс: номер на правах и на коде 95 отличаются — без совпадения в оформлении откажут.
+يرجى التحقق من الوثائق المرسلة وإعادة إرسالها." data-en="We checked the documents. One issue: the licence number and the code 95 number don't match — processing will be rejected without a match.
 
-Проверьте, пожалуйста, правильно ли отправили документы, и пришлите повторно."
-data-en="We checked the documents. One issue: the licence number and the code 95 number don't match — processing will be rejected without a match.
+Please check you sent the correct documents and resend." data-ru="Проверили документы. Есть нюанс: номер на правах и на коде 95 отличаются — без совпадения в оформлении откажут.
 
-Please check you sent the correct documents and resend."
-data-ar="راجعنا الوثائق. هناك مشكلة: رقم رخصة القيادة لا يتطابق مع رقم كود 95 — سيُرفض الطلب بدون تطابق.
+Проверьте, пожалуйста, правильно ли отправили документы, и пришлите повторно." data-uk="Перевірили документи. Є нюанс: номер на правах і на коді 95 відрізняються — без збігу в оформленні відмовлять.
 
-يرجى التحقق من الوثائق المرسلة وإعادة إرسالها.">Перевірили документи. Є нюанс: номер на правах і на коді 95 відрізняються — без збігу в оформленні відмовлять.
+Перевірте, будь ласка, чи правильно відправили документи, і надішліть повторно.">Перевірили документи. Є нюанс: номер на правах і на коді 95 відрізняються — без збігу в оформленні відмовлять.
 
 Перевірте, будь ласка, чи правильно відправили документи, і надішліть повторно.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p8-b" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">!</span><span class="st">Справка стара або без апостиля</span></div>
-    <div class="mbox" data-uk="Перевірили документи. На жаль, є проблема зі справкою:
-[вибрати потрібне]
-▸ Справка старіша 3 місяців — потрібна нова (не старіша 3 міс. з апостилем)
-▸ На справці немає апостиля — без нього оформлення неможливе
-
-Коли будете готові з новою справкою — пишіть, продовжимо."
-data-ru="Проверили документы. К сожалению, есть проблема со справкой:
-[выбрать нужное]
-▸ Справка старше 3 месяцев — нужна новая (не старше 3 мес. с апостилем)
-▸ На справке нет апостиля — без него оформление невозможно
-
-Когда будете готовы с новой справкой — пишите, продолжим."
-data-en="We checked the documents. Unfortunately there's an issue with the certificate:
-[choose applicable]
-▸ Certificate is older than 3 months — a new one is needed (max 3 months, with apostille)
-▸ Certificate has no apostille — processing is not possible without it
-
-When you have a new certificate ready — just message us and we'll continue."
-data-ar="راجعنا الوثائق. للأسف هناك مشكلة في الشهادة:
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p8-b">
+<div class="blk"><div class="step-h"><span class="sn">!</span><span class="st">Справка стара або без апостиля</span></div>
+<div class="mbox" data-ar="راجعنا الوثائق. للأسف هناك مشكلة في الشهادة:
 [اختر المناسب]
 ▸ الشهادة أقدم من 3 أشهر — نحتاج إلى شهادة جديدة (بحد أقصى 3 أشهر مع الأبوستيل)
 ▸ الشهادة لا تحمل الأبوستيل — لا يمكن المعالجة بدونه
 
-عندما يكون لديك شهادة جديدة — راسلنا وسنكمل.">Перевірили документи. На жаль, є проблема зі справкою:
+عندما يكون لديك شهادة جديدة — راسلنا وسنكمل." data-en="We checked the documents. Unfortunately there's an issue with the certificate:
+[choose applicable]
+▸ Certificate is older than 3 months — a new one is needed (max 3 months, with apostille)
+▸ Certificate has no apostille — processing is not possible without it
+
+When you have a new certificate ready — just message us and we'll continue." data-ru="Проверили документы. К сожалению, есть проблема со справкой:
+[выбрать нужное]
+▸ Справка старше 3 месяцев — нужна новая (не старше 3 мес. с апостилем)
+▸ На справке нет апостиля — без него оформление невозможно
+
+Когда будете готовы с новой справкой — пишите, продолжим." data-uk="Перевірили документи. На жаль, є проблема зі справкою:
+[вибрати потрібне]
+▸ Справка старіша 3 місяців — потрібна нова (не старіша 3 міс. з апостилем)
+▸ На справці немає апостиля — без нього оформлення неможливе
+
+Коли будете готові з новою справкою — пишіть, продовжимо.">Перевірили документи. На жаль, є проблема зі справкою:
 [вибрати потрібне]
 ▸ Справка старіша 3 місяців — потрібна нова (не старіша 3 міс. з апостилем)
 ▸ На справці немає апостиля — без нього оформлення неможливе
 
 Коли будете готові з новою справкою — пишіть, продовжимо.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p8-c" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">!</span><span class="st">Нечіткі фото / погана якість</span></div>
-    <div class="mbox" data-uk="Дякуємо за документи! [назва документа] нечіткий — дані погано читаються. Потрібне нове фото в гарній якості, при нормальному освітленні. Надішліть, будь ласка, повторно."
-data-ru="Спасибо за документы! [название документа] нечёткий — данные плохо читаются. Нужно новое фото в хорошем качестве, при нормальном освещении. Пришлите, пожалуйста, повторно."
-data-en="Thank you for the documents! [document name] is blurry — the details are not readable. Please take a new photo in good lighting and resend."
-data-ar="شكراً على الوثائق! [اسم الوثيقة] ضبابية — البيانات غير مقروءة. يرجى التقاط صورة جديدة في إضاءة جيدة وإعادة إرسالها.">Дякуємо за документи! [назва документа] нечіткий — дані погано читаються. Потрібне нове фото в гарній якості, при нормальному освітленні. Надішліть, будь ласка, повторно.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p8-d" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">!</span><span class="st">Невірне селфі або підпис</span></div>
-    <div class="mbox" data-uk="Дякуємо за документи! Є невеликий нюанс:
-[вибрати потрібне]
-▸ Селфі: потрібне фото на білому або дуже світлому фоні (не стіна, не вулиця)
-▸ Підпис: потрібен власноруч написаний підпис на чистому білому аркуші (не скан підпису з документа)
-
-Надішліть, будь ласка, ще раз."
-data-ru="Спасибо за документы! Есть небольшой нюанс:
-[выбрать нужное]
-▸ Селфи: нужно фото на белом или очень светлом фоне (не стена, не улица)
-▸ Подпись: нужна собственноручная подпись на чистом белом листе (не скан подписи с документа)
-
-Пришлите, пожалуйста, ещё раз."
-data-en="Thanks for the documents! One small issue:
-[choose applicable]
-▸ Selfie: needs to be on a white or very light background (not a wall or outdoor)
-▸ Signature: needs to be handwritten on a plain white sheet (not scanned from a document)
-
-Please resend."
-data-ar="شكراً على الوثائق! هناك نقطة صغيرة:
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p8-c">
+<div class="blk"><div class="step-h"><span class="sn">!</span><span class="st">Нечіткі фото / погана якість</span></div>
+<div class="mbox" data-ar="شكراً على الوثائق! [اسم الوثيقة] ضبابية — البيانات غير مقروءة. يرجى التقاط صورة جديدة في إضاءة جيدة وإعادة إرسالها." data-en="Thank you for the documents! [document name] is blurry — the details are not readable. Please take a new photo in good lighting and resend." data-ru="Спасибо за документы! [название документа] нечёткий — данные плохо читаются. Нужно новое фото в хорошем качестве, при нормальном освещении. Пришлите, пожалуйста, повторно." data-uk="Дякуємо за документи! [назва документа] нечіткий — дані погано читаються. Потрібне нове фото в гарній якості, при нормальному освітленні. Надішліть, будь ласка, повторно.">Дякуємо за документи! [назва документа] нечіткий — дані погано читаються. Потрібне нове фото в гарній якості, при нормальному освітленні. Надішліть, будь ласка, повторно.</div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p8-d">
+<div class="blk"><div class="step-h"><span class="sn">!</span><span class="st">Невірне селфі або підпис</span></div>
+<div class="mbox" data-ar="شكراً على الوثائق! هناك نقطة صغيرة:
 [اختر المناسب]
 ▸ صورة السيلفي: يجب أن تكون على خلفية بيضاء أو فاتحة جداً (ليست جداراً أو في الخارج)
 ▸ التوقيع: يجب أن يكون مكتوباً يدوياً على ورقة بيضاء نظيفة (وليس مسحاً ضوئياً)
 
-يرجى إعادة الإرسال.">Дякуємо за документи! Є невеликий нюанс:
+يرجى إعادة الإرسال." data-en="Thanks for the documents! One small issue:
+[choose applicable]
+▸ Selfie: needs to be on a white or very light background (not a wall or outdoor)
+▸ Signature: needs to be handwritten on a plain white sheet (not scanned from a document)
+
+Please resend." data-ru="Спасибо за документы! Есть небольшой нюанс:
+[выбрать нужное]
+▸ Селфи: нужно фото на белом или очень светлом фоне (не стена, не улица)
+▸ Подпись: нужна собственноручная подпись на чистом белом листе (не скан подписи с документа)
+
+Пришлите, пожалуйста, ещё раз." data-uk="Дякуємо за документи! Є невеликий нюанс:
+[вибрати потрібне]
+▸ Селфі: потрібне фото на білому або дуже світлому фоні (не стіна, не вулиця)
+▸ Підпис: потрібен власноруч написаний підпис на чистому білому аркуші (не скан підпису з документа)
+
+Надішліть, будь ласка, ще раз.">Дякуємо за документи! Є невеликий нюанс:
 [вибрати потрібне]
 ▸ Селфі: потрібне фото на білому або дуже світлому фоні (не стіна, не вулиця)
 ▸ Підпис: потрібен власноруч написаний підпис на чистому білому аркуші (не скан підпису з документа)
 
 Надішліть, будь ласка, ще раз.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
 </div>
-
+</div>
 <!-- ===== P9: FAQ ===== -->
-<div id="p9" class="panel">
-  <div class="tabs">
-    <button class="tb on" onclick="showSub('p9','a',this)">Дорого</button>
-    <button class="tb" onclick="showSub('p9','b',this)">Чи можна в BY?</button>
-    <button class="tb" onclick="showSub('p9','c',this)">Безпечно онлайн?</button>
-    <button class="tb" onclick="showSub('p9','d',this)">Де офіс?</button>
-    <button class="tb" onclick="showSub('p9','e',this)">Мовчить 2+ дні</button>
-  </div>
-  <div id="p9-a" class="sub on">
-    <div class="blk"><div class="step-h"><span class="sn">?</span><span class="st">"Дорого" / "у конкурентів дешевше"</span></div>
-    <div class="mbox" data-uk="Ціна включає все — оформлення, перевірку документів, держмито та доставку. Нічого зверху не доплачується.
-
-Плюс ви заощаджуєте час і гроші на поїздку — всі документи онлайн, карта приїде поштою прямо до вас.
-
-Якщо хочете — уточніть що вам пропонували, і я скажу чи є різниця в послузі."
-data-ru="Цена включает всё — оформление, проверку документов, госпошлину и доставку. Ничего сверху доплачивать не нужно.
-
-Плюс вы экономите время и деньги на поездку — все документы онлайн, карта придёт почтой прямо к вам.
-
-Если хотите — уточните, что вам предлагали, и я скажу, есть ли разница в услуге."
-data-en="The price includes everything — processing, document check, state fee and delivery. No hidden charges.
-
-Plus you save time and money on travel — all documents online, card delivered to your door.
-
-If you'd like — share what you were offered elsewhere and I'll tell you if there's a difference in the service."
-data-ar="السعر يشمل كل شيء — المعالجة، مراجعة الوثائق، الرسوم الحكومية والتوصيل. لا رسوم خفية.
+<div class="panel" id="p9">
+<div class="tabs">
+<button class="tb on" onclick="showSub('p9','a',this)">Дорого</button>
+<button class="tb" onclick="showSub('p9','b',this)">Чи можна в BY?</button>
+<button class="tb" onclick="showSub('p9','c',this)">Безпечно онлайн?</button>
+<button class="tb" onclick="showSub('p9','d',this)">Де офіс?</button>
+<button class="tb" onclick="showSub('p9','e',this)">Мовчить 2+ дні</button>
+</div>
+<div class="sub on" id="p9-a">
+<div class="blk"><div class="step-h"><span class="sn">?</span><span class="st">"Дорого" / "у конкурентів дешевше"</span></div>
+<div class="mbox" data-ar="السعر يشمل كل شيء — المعالجة، مراجعة الوثائق، الرسوم الحكومية والتوصيل. لا رسوم خفية.
 
 بالإضافة إلى ذلك توفر الوقت والمال في السفر — كل الوثائق عبر الإنترنت، والبطاقة تُسلَّم إلى بابك.
 
-إذا أردت — أخبرني بما عُرض عليك في مكان آخر وسأخبرك إذا كان هناك فرق في الخدمة.">Ціна включає все — оформлення, перевірку документів, держмито та доставку. Нічого зверху не доплачується.
+إذا أردت — أخبرني بما عُرض عليك في مكان آخر وسأخبرك إذا كان هناك فرق في الخدمة." data-en="The price includes everything — processing, document check, state fee and delivery. No hidden charges.
+
+Plus you save time and money on travel — all documents online, card delivered to your door.
+
+If you'd like — share what you were offered elsewhere and I'll tell you if there's a difference in the service." data-ru="Цена включает всё — оформление, проверку документов, госпошлину и доставку. Ничего сверху доплачивать не нужно.
+
+Плюс вы экономите время и деньги на поездку — все документы онлайн, карта придёт почтой прямо к вам.
+
+Если хотите — уточните, что вам предлагали, и я скажу, есть ли разница в услуге." data-uk="Ціна включає все — оформлення, перевірку документів, держмито та доставку. Нічого зверху не доплачується.
+
+Плюс ви заощаджуєте час і гроші на поїздку — всі документи онлайн, карта приїде поштою прямо до вас.
+
+Якщо хочете — уточніть що вам пропонували, і я скажу чи є різниця в послузі.">Ціна включає все — оформлення, перевірку документів, держмито та доставку. Нічого зверху не доплачується.
 
 Плюс ви заощаджуєте час і гроші на поїздку — всі документи онлайн, карта приїде поштою прямо до вас.
 
 Якщо хочете — уточніть що вам пропонували, і я скажу чи є різниця в послузі.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p9-b" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">?</span><span class="st">"Я в Білорусі, можна відправити?"</span></div>
-    <div class="mbox" data-uk="Так, відправляємо в Білорусь — передаємо через наших учнів, які регулярно їздять туди. Безкоштовно 🍫
-
-Оформлення повністю онлайн, нікуди їхати не потрібно. Надсилаєте скани → ми оформляємо → передаємо карту.
-
-Яка ситуація з документами: польський код 95, справка з ДАІ чи щось інше?"
-data-ru="Да, отправляем в Беларусь — передаём через наших учеников, которые регулярно туда едут. Бесплатно 🍫
-
-Оформление полностью онлайн, никуда ехать не нужно. Присылаете сканы → мы оформляем → передаём карту.
-
-Какая ситуация с документами: польский код 95, справка из ГАИ или что-то другое?"
-data-en="Yes, we deliver to Belarus — through our students who regularly travel there. Free of charge 🍫
-
-Everything is fully online, no travel needed. You send scans → we process → card gets handed over.
-
-What documents do you have: Polish code 95, traffic certificate, or something else?"
-data-ar="نعم، نوصّل إلى بيلاروسيا — عبر طلابنا الذين يسافرون هناك بانتظام. مجاناً 🍫
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p9-b">
+<div class="blk"><div class="step-h"><span class="sn">?</span><span class="st">"Я в Білорусі, можна відправити?"</span></div>
+<div class="mbox" data-ar="نعم، نوصّل إلى بيلاروسيا — عبر طلابنا الذين يسافرون هناك بانتظام. مجاناً 🍫
 
 كل شيء عبر الإنترنت، لا حاجة للسفر. ترسل الوثائق → نعالج → تُسلَّم البطاقة.
 
-ما هي وثائقك: كود 95 البولندي، شهادة المرور، أم شيء آخر؟">Так, відправляємо в Білорусь — передаємо через наших учнів, які регулярно їздять туди. Безкоштовно 🍫
+ما هي وثائقك: كود 95 البولندي، شهادة المرور، أم شيء آخر؟" data-en="Yes, we deliver to Belarus — through our students who regularly travel there. Free of charge 🍫
+
+Everything is fully online, no travel needed. You send scans → we process → card gets handed over.
+
+What documents do you have: Polish code 95, traffic certificate, or something else?" data-ru="Да, отправляем в Беларусь — передаём через наших учеников, которые регулярно туда едут. Бесплатно 🍫
+
+Оформление полностью онлайн, никуда ехать не нужно. Присылаете сканы → мы оформляем → передаём карту.
+
+Какая ситуация с документами: польский код 95, справка из ГАИ или что-то другое?" data-uk="Так, відправляємо в Білорусь — передаємо через наших учнів, які регулярно їздять туди. Безкоштовно 🍫
+
+Оформлення повністю онлайн, нікуди їхати не потрібно. Надсилаєте скани → ми оформляємо → передаємо карту.
+
+Яка ситуація з документами: польський код 95, справка з ДАІ чи щось інше?">Так, відправляємо в Білорусь — передаємо через наших учнів, які регулярно їздять туди. Безкоштовно 🍫
 
 Оформлення повністю онлайн, нікуди їхати не потрібно. Надсилаєте скани → ми оформляємо → передаємо карту.
 
 Яка ситуація з документами: польський код 95, справка з ДАІ чи щось інше?</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p9-c" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">?</span><span class="st">"Чи безпечно відправляти документи?"</span></div>
-    <div class="mbox" data-uk="Розуміємо питання. Ми офіційно оформляємо чіп-карти вже [N] років, через нас пройшли сотні водіїв з України, Білорусі та інших країн.
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p9-c">
+<div class="blk"><div class="step-h"><span class="sn">?</span><span class="st">"Чи безпечно відправляти документи?"</span></div>
+<div class="mbox" data-ar="نفهم السؤال تماماً. نحن نعالج بطاقات السائقين رسمياً منذ [N] سنوات، وقد مررنا بمئات السائقين من أوكرانيا وبيلاروسيا ودول أخرى.
 
-Документи використовуються тільки для подачі заяви. Якщо хочете — можемо надіслати відгуки клієнтів."
-data-ru="Понимаем вопрос. Мы официально оформляем чип-карты уже [N] лет, через нас прошли сотни водителей из Украины, Беларуси и других стран.
+الوثائق تُستخدم فقط لتقديم الطلب — لا شيء غير ذلك. إذا أردت، يمكننا مشاركة آراء العملاء." data-en="Totally understand. We've been officially processing driver cards for [N] years, with hundreds of drivers from Ukraine, Belarus and across Europe.
 
-Документы используются только для подачи заявления. Если хотите — можем прислать отзывы клиентов."
-data-en="Totally understand. We've been officially processing driver cards for [N] years, with hundreds of drivers from Ukraine, Belarus and across Europe.
+Documents are only used for the application — nothing else. If you'd like, we can share client reviews." data-ru="Понимаем вопрос. Мы официально оформляем чип-карты уже [N] лет, через нас прошли сотни водителей из Украины, Беларуси и других стран.
 
-Documents are only used for the application — nothing else. If you'd like, we can share client reviews."
-data-ar="نفهم السؤال تماماً. نحن نعالج بطاقات السائقين رسمياً منذ [N] سنوات، وقد مررنا بمئات السائقين من أوكرانيا وبيلاروسيا ودول أخرى.
+Документы используются только для подачи заявления. Если хотите — можем прислать отзывы клиентов." data-uk="Розуміємо питання. Ми офіційно оформляємо чіп-карти вже [N] років, через нас пройшли сотні водіїв з України, Білорусі та інших країн.
 
-الوثائق تُستخدم فقط لتقديم الطلب — لا شيء غير ذلك. إذا أردت، يمكننا مشاركة آراء العملاء.">Розуміємо питання. Ми офіційно оформляємо чіп-карти вже [N] років, через нас пройшли сотні водіїв з України, Білорусі та інших країн.
+Документи використовуються тільки для подачі заяви. Якщо хочете — можемо надіслати відгуки клієнтів.">Розуміємо питання. Ми офіційно оформляємо чіп-карти вже [N] років, через нас пройшли сотні водіїв з України, Білорусі та інших країн.
 
 Документи використовуються тільки для подачі заяви. Якщо хочете — можемо надіслати відгуки клієнтів.</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p9-d" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">?</span><span class="st">"Де ви? Можна приїхати?"</span></div>
-    <div class="mbox" data-uk="Ми у Варшаві. Але більшість клієнтів оформляють онлайн — просто надсилають скани, і ми відправляємо готову карту поштою по всій Європі та в Білорусь. Зручніше і не треба нікуди їхати.
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
+</div>
+<div class="sub" id="p9-d">
+<div class="blk"><div class="step-h"><span class="sn">?</span><span class="st">"Де ви? Можна приїхати?"</span></div>
+<div class="mbox" data-ar="نحن في وارسو. لكن معظم العملاء يتعاملون معنا عبر الإنترنت — يرسلون الوثائق ونرسل البطاقة الجاهزة بالبريد في جميع أنحاء أوروبا وإلى بيلاروسيا. أسهل وأوفر للوقت.
 
-Як вам зручніше?"
-data-ru="Мы в Варшаве. Но большинство клиентов оформляют онлайн — просто присылают сканы, и мы отправляем готовую карту почтой по всей Европе и в Беларусь. Удобнее и не нужно никуда ехать.
+ما الأنسب لك؟" data-en="We're in Warsaw. But most clients go fully online — they send scans and we mail the finished card across Europe and to Belarus. It's simpler and saves the trip.
 
-Как вам удобнее?"
-data-en="We're in Warsaw. But most clients go fully online — they send scans and we mail the finished card across Europe and to Belarus. It's simpler and saves the trip.
+What works better for you?" data-ru="Мы в Варшаве. Но большинство клиентов оформляют онлайн — просто присылают сканы, и мы отправляем готовую карту почтой по всей Европе и в Беларусь. Удобнее и не нужно никуда ехать.
 
-What works better for you?"
-data-ar="نحن في وارسو. لكن معظم العملاء يتعاملون معنا عبر الإنترنت — يرسلون الوثائق ونرسل البطاقة الجاهزة بالبريد في جميع أنحاء أوروبا وإلى بيلاروسيا. أسهل وأوفر للوقت.
+Как вам удобнее?" data-uk="Ми у Варшаві. Але більшість клієнтів оформляють онлайн — просто надсилають скани, і ми відправляємо готову карту поштою по всій Європі та в Білорусь. Зручніше і не треба нікуди їхати.
 
-ما الأنسب لك؟">Ми у Варшаві. Але більшість клієнтів оформляють онлайн — просто надсилають скани, і ми відправляємо готову карту поштою по всій Європі та в Білорусь. Зручніше і не треба нікуди їхати.
+Як вам зручніше?">Ми у Варшаві. Але більшість клієнтів оформляють онлайн — просто надсилають скани, і ми відправляємо готову карту поштою по всій Європі та в Білорусь. Зручніше і не треба нікуди їхати.
 
 Як вам зручніше?</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
-  <div id="p9-e" class="sub">
-    <div class="blk"><div class="step-h"><span class="sn">?</span><span class="st">Клієнт мовчить 2+ дні</span></div>
-    <div class="mbox" data-uk="Привіт! Нагадуємо про вашу заявку на чіп-карту — якщо є питання або потрібна допомога з документами, пишіть. Готові допомогти 👋"
-data-ru="Привет! Напоминаем о вашей заявке на чип-карту — если есть вопросы или нужна помощь с документами, пишите. Готовы помочь 👋"
-data-en="Hi! Just a reminder about your driver card application — if you have any questions or need help with documents, feel free to message us. Happy to help 👋"
-data-ar="مرحباً! تذكير بطلبك لبطاقة السائق — إذا كان لديك أسئلة أو تحتاج مساعدة في الوثائق، راسلنا. يسعدنا المساعدة 👋">Привіт! Нагадуємо про вашу заявку на чіп-карту — якщо є питання або потрібна допомога з документами, пишіть. Готові допомогти 👋</div>
-    <button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
-  </div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
 </div>
-
+<div class="sub" id="p9-e">
+<div class="blk"><div class="step-h"><span class="sn">?</span><span class="st">Клієнт мовчить 2+ дні</span></div>
+<div class="mbox" data-ar="مرحباً! تذكير بطلبك لبطاقة السائق — إذا كان لديك أسئلة أو تحتاج مساعدة في الوثائق، راسلنا. يسعدنا المساعدة 👋" data-en="Hi! Just a reminder about your driver card application — if you have any questions or need help with documents, feel free to message us. Happy to help 👋" data-ru="Привет! Напоминаем о вашей заявке на чип-карту — если есть вопросы или нужна помощь с документами, пишите. Готовы помочь 👋" data-uk="Привіт! Нагадуємо про вашу заявку на чіп-карту — якщо є питання або потрібна допомога з документами, пишіть. Готові допомогти 👋">Привіт! Нагадуємо про вашу заявку на чіп-карту — якщо є питання або потрібна допомога з документами, пишіть. Готові допомогти 👋</div>
+<button class="cp" onclick="copyMsg(this)">Копіювати</button></div>
 </div>
-
+</div>
+</div>
 <script>
 let lang='uk';
 function setLang(l,btn){
